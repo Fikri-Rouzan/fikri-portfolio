@@ -2,7 +2,14 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { motion } from "motion/react";
 import { NAV_ITEMS } from "@/data/navigation";
+
+const springTransition = {
+  type: "spring" as const,
+  stiffness: 380,
+  damping: 28,
+};
 
 export function Navbar() {
   const pathname = usePathname();
@@ -14,47 +21,44 @@ export function Navbar() {
           const Icon = item.icon;
           const isActive = pathname === item.href;
 
-          // Contact menu
-          if (item.isSpecial) {
-            return (
-              <div key={item.href} className="relative group">
-                <Link
-                  href={item.href}
-                  aria-label={item.label}
-                  className={`flex items-center justify-center rounded-full transition-all duration-300 font-mono text-sm font-bold border-2 border-border ${
-                    isActive
-                      ? "bg-foreground text-background px-4 sm:px-5 py-2 sm:py-2.5 shadow-[2px_2px_0px_0px_var(--border)] gap-2"
-                      : "bg-foreground text-background w-10 h-10 sm:w-11 sm:h-11 hover:scale-105 hover:shadow-[2px_2px_0px_0px_var(--border)]"
-                  }`}
-                >
-                  <Icon className="w-4 h-4 shrink-0" />
-                  {isActive && <span className="ml-1">{item.label}</span>}
-                </Link>
-
-                {!isActive && (
-                  <span className="absolute -top-11 left-1/2 -translate-x-1/2 px-2.5 py-1 bg-neutral-900 text-white text-[11px] font-mono rounded border border-border opacity-0 pointer-events-none group-hover:opacity-100 transition-opacity whitespace-nowrap shadow-[2px_2px_0px_0px_var(--border)]">
-                    {item.label}
-                  </span>
-                )}
-              </div>
-            );
-          }
-
-          // Navigation menu
+          // Navigation Menu
           return (
             <div key={item.href} className="relative group">
               <Link
                 href={item.href}
                 aria-label={item.label}
-                className={`flex items-center justify-center rounded-full transition-all duration-300 font-mono text-sm font-bold ${
+                className={`relative z-10 flex items-center justify-center rounded-full font-mono text-xs sm:text-sm font-bold transition-transform duration-150 ${
                   isActive
-                    ? "bg-main text-white px-4 sm:px-5 py-2 sm:py-2.5 border-2 border-border shadow-[2px_2px_0px_0px_var(--border)] gap-2"
-                    : "text-foreground w-10 h-10 sm:w-11 sm:h-11 hover:bg-background/80 hover:-translate-y-0.5"
+                    ? item.isSpecial
+                      ? "text-background px-4 sm:px-5 py-2 sm:py-2.5 gap-2"
+                      : "text-white px-4 sm:px-5 py-2 sm:py-2.5 gap-2"
+                    : item.isSpecial
+                      ? "bg-foreground text-background w-10 h-10 sm:w-11 sm:h-11 hover:scale-105 border-2 border-border shadow-[2px_2px_0px_0px_var(--border)]"
+                      : "text-foreground w-10 h-10 sm:w-11 sm:h-11 hover:bg-background/80"
                 }`}
               >
-                <Icon className="w-4 h-4 shrink-0" />
+                {/* Active navigation pill */}
                 {isActive && (
-                  <span className="tracking-wide ml-1">{item.label}</span>
+                  <motion.div
+                    layoutId="active-nav-pill"
+                    transition={springTransition}
+                    className={`absolute inset-0 rounded-full border-2 border-border shadow-[2px_2px_0px_0px_var(--border)] -z-10 ${
+                      item.isSpecial ? "bg-foreground" : "bg-main"
+                    }`}
+                  />
+                )}
+
+                <Icon className="w-4 h-4 sm:w-4.5 sm:h-4.5 shrink-0" />
+
+                {isActive && (
+                  <motion.span
+                    initial={{ opacity: 0, x: -4 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.15 }}
+                    className="tracking-wide ml-0.5"
+                  >
+                    {item.label}
+                  </motion.span>
                 )}
               </Link>
 
