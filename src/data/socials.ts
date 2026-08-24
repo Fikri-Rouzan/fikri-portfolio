@@ -1,5 +1,5 @@
 import { ElementType } from "react";
-import { Mail } from "lucide-react";
+import { FaEnvelope } from "react-icons/fa6";
 import { Linkedin, Github } from "@thesvg/react";
 
 export interface SocialContact {
@@ -16,7 +16,7 @@ export const SOCIAL_CONTACTS: SocialContact[] = [
     name: "Email",
     href: "mailto:fikrirzn@gmail.com",
     ariaLabel: "Email",
-    icon: Mail,
+    icon: FaEnvelope,
     isExternal: false,
   },
   {

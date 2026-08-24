@@ -5,8 +5,8 @@ export function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="w-full border-t-2 border-border bg-secondary-background mt-auto">
-      <div className="w-full px-4 sm:px-8 md:px-12 py-6 flex flex-col md:grid md:grid-cols-3 items-center gap-6">
+    <footer className="w-full border-t-2 border-border bg-secondary-background mt-auto pt-7 sm:pt-9 pb-28 sm:pb-32">
+      <div className="w-full px-4 sm:px-8 md:px-12 flex flex-col md:grid md:grid-cols-3 items-center gap-6">
         {/* Copyright */}
         <div className="text-xs sm:text-sm font-mono text-foreground text-center md:text-left md:justify-self-start order-1">
           © {currentYear} Muhammad Fikri Rouzan Ash Shidik
@@ -40,7 +40,7 @@ export function Footer() {
         </div>
 
         {/* Open to work badge */}
-        <div className="flex items-center gap-2 px-3 py-1 rounded-full border-2 border-border bg-background shadow-[2px_2px_0px_0px_var(--border)] font-mono text-xs font-bold text-foreground md:justify-self-end order-3">
+        <div className="flex items-center gap-2 px-3 py-1 rounded-full border-2 border-border bg-background shadow-[2px_2px_0px_0px_var(--border)] font-mono text-xs text-foreground md:justify-self-end order-3">
           <span className="relative flex h-2 w-2">
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
             <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
