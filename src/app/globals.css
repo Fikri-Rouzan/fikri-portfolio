@@ -82,3 +82,7 @@
     @apply font-heading;
   }
 }
+
+.grecaptcha-badge {
+  visibility: hidden !important;
+}
