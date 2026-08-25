@@ -51,14 +51,7 @@ export function Navbar() {
                 <Icon className="w-4 h-4 sm:w-4.5 sm:h-4.5 shrink-0" />
 
                 {isActive && (
-                  <motion.span
-                    initial={{ opacity: 0, x: -4 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.15 }}
-                    className="tracking-wide ml-0.5"
-                  >
-                    {item.label}
-                  </motion.span>
+                  <span className="tracking-wide ml-0.5">{item.label}</span>
                 )}
               </Link>
 

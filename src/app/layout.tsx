@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Space_Grotesk, Space_Mono } from "next/font/google";
-import { ThemeProvider } from "@/components/theme-provider";
+import { ThemeProvider } from "@/components/theme/theme-provider";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { Navbar } from "@/components/navbar";
@@ -18,8 +18,11 @@ const spaceMono = Space_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Fikri Rouzan",
-  description: "Personal portfolio",
+  title: {
+    default: "Muhammad Fikri Rouzan Ash Shidik",
+    template: "%s | Muhammad Fikri Rouzan Ash Shidik",
+  },
+  description: "My personal portfolio website.",
 };
 
 export default function RootLayout({
