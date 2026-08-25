@@ -1,5 +1,10 @@
+"use client";
+
 import Link from "next/link";
+import { motion } from "motion/react";
 import { SOCIAL_CONTACTS } from "@/data/socials";
+
+const MotionLink = motion.create(Link);
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -18,18 +23,25 @@ export function Footer() {
             const Icon = item.icon;
             return (
               <div key={item.name} className="relative group">
-                <Link
+                <MotionLink
                   href={item.href}
                   aria-label={item.ariaLabel}
                   target={item.isExternal ? "_blank" : undefined}
                   rel={item.isExternal ? "noopener noreferrer" : undefined}
-                  className="p-2.5 rounded-base border-2 border-border bg-background text-foreground shadow-[2px_2px_0px_0px_var(--border)] hover:-translate-y-1 hover:-translate-x-0.5 hover:shadow-[4px_4px_0px_0px_var(--border)] hover:bg-main hover:text-white transition-all flex items-center justify-center cursor-pointer"
+                  whileHover={{
+                    x: -2,
+                    y: -4,
+                    transition: { duration: 0.15, ease: "easeOut" },
+                  }}
+                  whileTap={{ scale: 0.98 }}
+                  className="p-2.5 rounded-base border-2 border-border bg-background text-foreground shadow-[2px_2px_0px_0px_var(--border)] hover:shadow-[4px_4px_0px_0px_var(--border)] hover:bg-main hover:text-white flex items-center justify-center cursor-pointer"
                 >
                   <Icon
                     className="w-4 h-4"
                     {...(item.variant ? { variant: item.variant } : {})}
                   />
-                </Link>
+                </MotionLink>
+
                 {/* Tooltip */}
                 <span className="absolute -top-8 left-1/2 -translate-x-1/2 px-2 py-0.5 bg-neutral-900 text-white text-[10px] font-mono rounded border border-border opacity-0 pointer-events-none group-hover:opacity-100 transition-opacity z-10 shadow-[2px_2px_0px_0px_var(--border)] whitespace-nowrap">
                   {item.name}
