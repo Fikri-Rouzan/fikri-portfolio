@@ -122,7 +122,7 @@ export function ProjectsContent() {
       </div>
 
       {/* Meta bar */}
-      <div className="flex items-center justify-between mb-6 font-mono text-xs sm:text-sm">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 sm:gap-4 mb-6 font-mono text-xs sm:text-sm">
         <h2 className="font-heading text-lg sm:text-xl text-foreground">
           {selectedCategory === "All"
             ? "All Projects"
