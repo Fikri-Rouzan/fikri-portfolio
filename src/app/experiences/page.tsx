@@ -1,12 +1,12 @@
+import type { Metadata } from "next";
+import { ExperiencesContent } from "@/components/experiences/experiences-content";
+
+export const metadata: Metadata = {
+  title: "Experiences",
+  description:
+    "A timeline of milestones and professional experiences in my career.",
+};
+
 export default function ExperiencesPage() {
-  return (
-    <div className="flex flex-col items-center justify-center min-h-[60vh] text-center gap-4">
-      <div className="p-8 rounded-base border-2 border-border bg-secondary-background shadow-shadow max-w-lg w-full">
-        <h1 className="text-3xl font-heading mb-2">Experiences</h1>
-        <p className="text-sm font-mono text-foreground/80">
-          Placeholder content.
-        </p>
-      </div>
-    </div>
-  );
+  return <ExperiencesContent />;
 }
