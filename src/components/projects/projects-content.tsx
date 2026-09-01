@@ -66,7 +66,7 @@ export function ProjectsContent() {
       <div className="mb-8">
         <div className="inline-flex items-center gap-2 px-4 py-2 mb-4 rounded-full border-2 border-border bg-main text-white font-mono text-xs font-bold shadow-[2px_2px_0px_0px_var(--border)]">
           <Sparkles className="w-3.5 h-3.5 text-white" />
-          Featured Projects
+          FEATURED PROJECTS
         </div>
         <h1 className="text-3xl sm:text-4xl font-heading tracking-tight mb-3">
           Crafted with Passion.
