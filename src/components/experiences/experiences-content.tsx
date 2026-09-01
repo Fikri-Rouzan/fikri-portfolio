@@ -2,10 +2,16 @@
 
 import * as React from "react";
 import { motion } from "motion/react";
-import { Sparkles, Calendar, Building2 } from "lucide-react";
+import { Sparkles, Calendar, Building2, FileText } from "lucide-react";
 import { EXPERIENCES } from "@/data/experiences";
+import { PdfModal } from "@/components/pdf-modal";
 
 export function ExperiencesContent() {
+  const [selectedPdf, setSelectedPdf] = React.useState<{
+    title: string;
+    url: string;
+  } | null>(null);
+
   const sortedExperiences = React.useMemo(() => {
     return [...EXPERIENCES].sort((a, b) => b.id - a.id);
   }, []);
@@ -71,7 +77,7 @@ export function ExperiencesContent() {
               </p>
 
               {/* Skills */}
-              <div className="flex flex-wrap gap-1.5 pt-1 border-t border-border/40">
+              <div className="flex flex-wrap gap-1.5 pt-2 border-t border-border/40">
                 {exp.skills.map((skill) => (
                   <span
                     key={skill}
@@ -81,10 +87,43 @@ export function ExperiencesContent() {
                   </span>
                 ))}
               </div>
+
+              {/* View certificate */}
+              {exp.certificateUrl && (
+                <div className="pt-1">
+                  <motion.button
+                    type="button"
+                    onClick={() =>
+                      setSelectedPdf({
+                        title: `${exp.role} - ${exp.company}`,
+                        url: exp.certificateUrl!,
+                      })
+                    }
+                    whileHover={{
+                      x: -1,
+                      y: -2,
+                      transition: { duration: 0.15, ease: "easeOut" },
+                    }}
+                    whileTap={{ scale: 0.95 }}
+                    className="w-fit px-3 py-1.5 rounded-base border-2 border-border bg-main text-white font-mono text-[11px] shadow-[2px_2px_0px_0px_var(--border)] hover:shadow-[4px_4px_0px_0px_var(--border)] flex items-center gap-1.5 cursor-pointer"
+                  >
+                    <FileText className="w-3.5 h-3.5" />
+                    <span>View Certificate</span>
+                  </motion.button>
+                </div>
+              )}
             </div>
           </div>
         ))}
       </div>
+
+      {/* PDF modal viewer */}
+      <PdfModal
+        isOpen={!!selectedPdf}
+        onClose={() => setSelectedPdf(null)}
+        title={selectedPdf?.title || "Certificate"}
+        pdfUrl={selectedPdf?.url || ""}
+      />
     </motion.section>
   );
 }
