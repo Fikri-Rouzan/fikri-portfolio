@@ -29,6 +29,11 @@ export function PdfModal({ isOpen, onClose, title, pdfUrl }: PdfModalProps) {
     };
   }, [isOpen, onClose]);
 
+  // Generate the preview page URL
+  const previewPageUrl = `/certificates/preview?title=${encodeURIComponent(
+    title,
+  )}&url=${encodeURIComponent(pdfUrl)}`;
+
   return (
     <AnimatePresence>
       {isOpen && (
@@ -62,7 +67,7 @@ export function PdfModal({ isOpen, onClose, title, pdfUrl }: PdfModalProps) {
               <div className="flex items-center gap-2 shrink-0">
                 {/* Open in new page */}
                 <a
-                  href={pdfUrl}
+                  href={previewPageUrl}
                   rel="noopener noreferrer"
                   className="p-1.5 sm:p-2 rounded-base border-2 border-border bg-background text-foreground hover:bg-main hover:text-white shadow-[2px_2px_0px_0px_var(--border)] transition-colors flex items-center justify-center"
                   title="Open in new page"

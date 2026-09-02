@@ -14,6 +14,10 @@ const springTransition = {
 export function Navbar() {
   const pathname = usePathname();
 
+  if (pathname.startsWith("/certificates/preview")) {
+    return null;
+  }
+
   return (
     <LayoutGroup id="navbar-pill-group">
       <nav className="fixed bottom-5 left-1/2 -translate-x-1/2 z-50">
