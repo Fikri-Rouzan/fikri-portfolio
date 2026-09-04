@@ -7,7 +7,7 @@ export interface ContactItem {
   value: string;
   href?: string;
   icon: ElementType;
-  variant?: "mono" | "default";
+  variant?: "mono";
   isExternal?: boolean;
 }
 

@@ -14,7 +14,7 @@ const springTransition = {
 export function Navbar() {
   const pathname = usePathname();
 
-  if (pathname.startsWith("/certificates/preview")) {
+  if (pathname.startsWith("/preview")) {
     return null;
   }
 

@@ -7,7 +7,7 @@ export interface SocialContact {
   href: string;
   ariaLabel: string;
   icon: ElementType;
-  variant?: "mono" | "default";
+  variant?: "mono";
   isExternal?: boolean;
 }
 
