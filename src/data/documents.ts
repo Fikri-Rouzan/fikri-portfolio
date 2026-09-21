@@ -10,6 +10,18 @@ export const DOCUMENTS: Record<string, DocumentItem> = {
     title: "Curriculum Vitae",
     fileUrl: "/assets/cv/cv-muhammad-fikri-rouzan-ash-shidik.pdf",
   },
+  "alibaba-cloud-certified-associate-system-operator": {
+    slug: "alibaba-cloud-certified-associate-system-operator",
+    title: "Alibaba Cloud Certified Associate System Operator",
+    fileUrl:
+      "/assets/certificates/alibaba-cloud-certified-associate-system-operator.pdf",
+  },
+  "basics-of-network-layer-protocols-micro-certification": {
+    slug: "basics-of-network-layer-protocols-micro-certification",
+    title: "Basics of Network Layer Protocols Micro Certification",
+    fileUrl:
+      "/assets/certificates/basics-of-network-layer-protocols-micro-certification.pdf",
+  },
   "junior-cybersecurity-engineer": {
     slug: "junior-cybersecurity-engineer",
     title: "Junior Cybersecurity Engineer",

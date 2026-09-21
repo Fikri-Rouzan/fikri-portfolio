@@ -68,7 +68,7 @@ export const MARQUEE_ROW_1: TechStackItem[] = [
 export const MARQUEE_ROW_2: TechStackItem[] = [
   { name: "MySQL", icon: Mysql, variant: "light" },
   { name: "Python", icon: Python },
-  { name: "Jupyter", icon: Jupyter },
+  { name: "Jupyter Notebook", icon: Jupyter },
   { name: "TensorFlow", icon: Tensorflow, variant: "mono" },
   { name: "PyTorch", icon: Pytorch },
   { name: "OpenCV", icon: Opencv },

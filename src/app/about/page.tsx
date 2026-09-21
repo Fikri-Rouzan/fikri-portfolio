@@ -1,12 +1,11 @@
+import type { Metadata } from "next";
+import { AboutContent } from "@/components/about/about-content";
+
+export const metadata: Metadata = {
+  title: "About",
+  description: "Learn more about me.",
+};
+
 export default function AboutPage() {
-  return (
-    <div className="flex flex-col items-center justify-center min-h-[60vh] text-center gap-4">
-      <div className="p-8 rounded-base border-2 border-border bg-secondary-background shadow-shadow max-w-lg w-full">
-        <h1 className="text-3xl font-heading mb-2">About Me</h1>
-        <p className="text-sm font-mono text-foreground/80">
-          Placeholder content.
-        </p>
-      </div>
-    </div>
-  );
+  return <AboutContent />;
 }

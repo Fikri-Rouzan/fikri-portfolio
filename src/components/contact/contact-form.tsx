@@ -7,6 +7,7 @@ import {
   GoogleReCaptchaProvider,
   useGoogleReCaptcha,
 } from "react-google-recaptcha-v3";
+import { motion } from "motion/react";
 import { Send, CheckCircle2, AlertCircle, Loader2 } from "lucide-react";
 import { contactSchema, ContactFormData } from "@/lib/schemas/contact";
 import { sendContactEmail } from "@/actions/contact";
@@ -183,10 +184,20 @@ function FormFields() {
 
       {/* Submit button */}
       <div className="mt-2">
-        <button
+        <motion.button
           type="submit"
           disabled={isSubmitting}
-          className="w-full sm:w-auto px-6 py-3 rounded-base border-2 border-border bg-main text-white font-mono text-sm font-bold shadow-shadow hover:-translate-y-0.5 hover:-translate-x-0.5 hover:shadow-[6px_6px_0px_0px_var(--border)] active:translate-x-0 active:translate-y-0 active:shadow-[2px_2px_0px_0px_var(--border)] transition-all flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
+          whileHover={
+            !isSubmitting
+              ? {
+                  x: -2,
+                  y: -4,
+                  transition: { duration: 0.15, ease: "easeOut" },
+                }
+              : {}
+          }
+          whileTap={!isSubmitting ? { scale: 0.98 } : {}}
+          className="w-full sm:w-auto px-6 py-3 rounded-base border-2 border-border bg-main text-white font-mono text-sm font-bold shadow-shadow hover:shadow-[6px_6px_0px_0px_var(--border)] flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
         >
           {isSubmitting ? (
             <>
@@ -199,7 +210,7 @@ function FormFields() {
               <span>SEND MESSAGE</span>
             </>
           )}
-        </button>
+        </motion.button>
       </div>
     </form>
   );
