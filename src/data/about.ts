@@ -99,7 +99,8 @@ export const EDUCATION_DATA: EducationItem[] = [
     major: "Informatics Engineering",
     period: "Sep 2023 - Present",
     gpa: "3.77 / 4.00",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    description:
+      "Final-year Informatics Engineering student with a 3.77 / 4.00 GPA, demonstrating a balance between research accomplishments, specialized technical training, and leadership. Published a deep learning research paper on rice quality classification using the MobileNetV2 architecture at CITSM 2026. Beyond academic achievements, served in management at Dapur Seni, explored UI/UX, web development, mobile, and AI/ML within Google Developer Group on Campus (GDGoC), and completed the Digital Talent Scholarship x Oracle Academy track in Java Fundamentals and Programming.",
   },
 ];
 

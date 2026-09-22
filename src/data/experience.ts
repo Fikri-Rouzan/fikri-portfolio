@@ -18,7 +18,8 @@ export const EXPERIENCES: Experience[] = [
     company: "VINIX7",
     period: "Feb 2025 - May 2025",
     type: "Internship",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    description:
+      "Executed comprehensive Vulnerability Assessment and Penetration Testing (VAPT) using tools like Nessus and Metasploit, while analyzing network traffic with Wireshark, configuring Wazuh SIEM for real-time threat monitoring, and assisting digital forensic investigations using Autopsy and FTK Imager.",
     skills: [
       "Network Security",
       "Digital Forensics",
@@ -34,7 +35,8 @@ export const EXPERIENCES: Experience[] = [
     company: "iLC Learning Center",
     period: "Feb 2025 - Jun 2025",
     type: "Internship",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    description:
+      "Managed structured data collection workflows and exploratory data analysis using Python, designing interactive operational dashboards in Tableau and Data Studio while developing classification and clustering machine learning models through Orange Data Mining.",
     skills: [
       "Data Analysis",
       "Data Mining",
@@ -52,7 +54,8 @@ export const EXPERIENCES: Experience[] = [
     company: "DBS Foundation",
     period: "Feb 2026 - Jul 2026",
     type: "Internship",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    description:
+      "Conducted end-to-end exploratory data analysis, cleaning, and preprocessing on complex datasets using Python and spreadsheet tools, while collaborating with a multidisciplinary team to deliver structured analytical reports, interactive visualizations, and a real-world capstone project.",
     skills: [
       "Data Analysis",
       "Data Mining",
