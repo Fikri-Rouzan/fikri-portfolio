@@ -17,7 +17,7 @@ export interface NavItem {
 export const NAV_ITEMS: NavItem[] = [
   { label: "Home", href: "/", icon: FaHouse },
   { label: "About", href: "/about", icon: FaUser },
-  { label: "Experiences", href: "/experiences", icon: FaBriefcase },
+  { label: "Experience", href: "/experience", icon: FaBriefcase },
   { label: "Projects", href: "/projects", icon: FaTableCellsLarge },
   { label: "Contact", href: "/contact", icon: FaEnvelope, isSpecial: true },
 ];

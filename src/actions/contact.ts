@@ -19,14 +19,14 @@ export async function sendContactEmail({
   if (!validation.success) {
     return {
       success: false,
-      error: "Invalid form submission. Please check your inputs.",
+      error: "Invalid form submission. Please check your input fields.",
     };
   }
 
   if (!token) {
     return {
       success: false,
-      error: "reCAPTCHA verification token missing.",
+      error: "reCAPTCHA verification missing. Please refresh and try again.",
     };
   }
 
@@ -49,7 +49,7 @@ export async function sendContactEmail({
     if (!recaptchaData.success || recaptchaData.score < 0.5) {
       return {
         success: false,
-        error: "Bot activity detected. reCAPTCHA verification failed.",
+        error: "reCAPTCHA verification failed. Please try again.",
       };
     }
 
@@ -72,7 +72,7 @@ export async function sendContactEmail({
   } catch {
     return {
       success: false,
-      error: "Failed to process message. Please try again later.",
+      error: "Failed to send message. Please try again later.",
     };
   }
 }

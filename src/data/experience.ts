@@ -8,7 +8,7 @@ export interface Experience {
   type: ExperienceType;
   description: string;
   skills: string[];
-  certificateUrl?: string;
+  certificateSlug?: string;
 }
 
 export const EXPERIENCES: Experience[] = [
@@ -26,8 +26,7 @@ export const EXPERIENCES: Experience[] = [
       "Wireshark",
       "Linux",
     ],
-    certificateUrl:
-      "/assets/certificates/experiences/junior-cybersecurity-engineer.pdf",
+    certificateSlug: "junior-cybersecurity-engineer",
   },
   {
     id: 2,
@@ -45,8 +44,7 @@ export const EXPERIENCES: Experience[] = [
       "Power BI",
       "Data Studio",
     ],
-    certificateUrl:
-      "/assets/certificates/experiences/junior-data-scientist.pdf",
+    certificateSlug: "junior-data-scientist",
   },
   {
     id: 3,
@@ -62,7 +60,6 @@ export const EXPERIENCES: Experience[] = [
       "Python",
       "Streamlit",
     ],
-    certificateUrl:
-      "/assets/certificates/experiences/data-scientist-cohort.pdf",
+    certificateSlug: "data-scientist-cohort",
   },
 ];

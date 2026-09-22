@@ -22,7 +22,8 @@ export const metadata: Metadata = {
     default: "Muhammad Fikri Rouzan Ash Shidik",
     template: "%s | Muhammad Fikri Rouzan Ash Shidik",
   },
-  description: "My personal portfolio website.",
+  description:
+    "Personal portfolio of Muhammad Fikri Rouzan Ash Shidik, showcasing technical projects, software engineering capabilities, and professional achievements.",
 };
 
 export default function RootLayout({

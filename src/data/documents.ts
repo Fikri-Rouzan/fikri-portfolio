@@ -26,17 +26,17 @@ export const DOCUMENTS: Record<string, DocumentItem> = {
     slug: "junior-cybersecurity-engineer",
     title: "Junior Cybersecurity Engineer",
     fileUrl:
-      "/assets/certificates/experiences/junior-cybersecurity-engineer.pdf",
+      "/assets/certificates/experience/junior-cybersecurity-engineer.pdf",
   },
   "junior-data-scientist": {
     slug: "junior-data-scientist",
     title: "Junior Data Scientist",
-    fileUrl: "/assets/certificates/experiences/junior-data-scientist.pdf",
+    fileUrl: "/assets/certificates/experience/junior-data-scientist.pdf",
   },
   "data-scientist-cohort": {
     slug: "data-scientist-cohort",
     title: "Data Scientist Cohort",
-    fileUrl: "/assets/certificates/experiences/data-scientist-cohort.pdf",
+    fileUrl: "/assets/certificates/experience/data-scientist-cohort.pdf",
   },
 };
 

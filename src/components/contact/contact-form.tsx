@@ -35,7 +35,7 @@ function FormFields() {
     if (!executeRecaptcha) {
       setStatus({
         type: "error",
-        message: "reCAPTCHA not ready yet. Please try again in a moment.",
+        message: "reCAPTCHA is not ready yet. Please try again in a moment.",
       });
       return;
     }
@@ -51,13 +51,15 @@ function FormFields() {
     if (result.success) {
       setStatus({
         type: "success",
-        message: "Message sent successfully! I will get back to you soon.",
+        message: "Message sent successfully! I'll get back to you soon.",
       });
       reset();
     } else {
       setStatus({
         type: "error",
-        message: result.error || "An error occurred while sending the message.",
+        message:
+          result.error ||
+          "Something went wrong while sending your message. Please try again.",
       });
     }
   };
@@ -99,7 +101,7 @@ function FormFields() {
             id="contact-name"
             type="text"
             autoComplete="name"
-            placeholder="Your name"
+            placeholder="Your Name"
             disabled={isSubmitting}
             className="w-full px-3.5 py-2.5 rounded-base border-2 border-border bg-background text-foreground text-sm font-sans placeholder:text-foreground/40 focus:outline-none focus:shadow-[2px_2px_0px_0px_var(--border)] transition-shadow"
           />
@@ -122,7 +124,7 @@ function FormFields() {
             id="contact-email"
             type="email"
             autoComplete="email"
-            placeholder="your@email.com"
+            placeholder="your.email@example.com"
             disabled={isSubmitting}
             className="w-full px-3.5 py-2.5 rounded-base border-2 border-border bg-background text-foreground text-sm font-sans placeholder:text-foreground/40 focus:outline-none focus:shadow-[2px_2px_0px_0px_var(--border)] transition-shadow"
           />
@@ -147,7 +149,7 @@ function FormFields() {
           id="contact-subject"
           type="text"
           autoComplete="off"
-          placeholder="Project inquiry..."
+          placeholder="e.g. Project Inquiry / Collaboration"
           disabled={isSubmitting}
           className="w-full px-3.5 py-2.5 rounded-base border-2 border-border bg-background text-foreground text-sm font-sans placeholder:text-foreground/40 focus:outline-none focus:shadow-[2px_2px_0px_0px_var(--border)] transition-shadow"
         />
@@ -171,7 +173,7 @@ function FormFields() {
           id="contact-message"
           rows={5}
           autoComplete="off"
-          placeholder="Tell me about your project..."
+          placeholder="Tell me about your project, timeline, or inquiry..."
           disabled={isSubmitting}
           className="w-full px-3.5 py-2.5 rounded-base border-2 border-border bg-background text-foreground text-sm font-sans placeholder:text-foreground/40 focus:outline-none focus:shadow-[2px_2px_0px_0px_var(--border)] transition-shadow resize-none"
         />

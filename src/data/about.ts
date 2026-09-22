@@ -55,6 +55,7 @@ import {
   Tableau,
   Postman,
   Figma,
+  Laragon,
   Aws,
   Railway,
   Vercel,
@@ -202,6 +203,7 @@ export const TECH_CATEGORIES: TechCategory[] = [
       { name: "Tableau", icon: Tableau },
       { name: "Postman", icon: Postman },
       { name: "Figma", icon: Figma },
+      { name: "Laragon", icon: Laragon },
     ],
   },
   {

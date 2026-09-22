@@ -21,7 +21,7 @@ export function MilestonesSection() {
   }, []);
 
   return (
-    <div className="flex flex-col gap-6">
+    <div className="flex flex-col gap-6 my-6">
       <div className="relative flex items-center justify-center my-2">
         <div className="absolute inset-0 flex items-center">
           <div className="w-full border-t-2 border-border" />

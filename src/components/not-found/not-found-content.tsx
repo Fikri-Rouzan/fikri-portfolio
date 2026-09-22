@@ -37,7 +37,7 @@ export function NotFoundContent() {
           href="/"
           className="inline-flex items-center justify-center px-6 py-3 rounded-base border-2 border-border bg-main text-white font-mono text-xs sm:text-sm font-bold shadow-shadow hover:shadow-[6px_6px_0px_0px_var(--border)] cursor-pointer"
         >
-          RETURN HOME
+          RETURN TO HOME
         </Link>
       </motion.div>
     </motion.div>

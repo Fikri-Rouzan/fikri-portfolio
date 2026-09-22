@@ -23,12 +23,12 @@ export async function generateMetadata({
 
   if (!doc) {
     return {
-      title: "Not Found",
+      title: "404 - Page Not Found",
     };
   }
 
   return {
-    title: doc.title,
+    title: `Document Preview - ${doc.title}`,
     description: `Document preview for ${doc.title}`,
   };
 }

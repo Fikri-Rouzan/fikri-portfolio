@@ -24,8 +24,8 @@ export function AboutContent() {
           Muhammad Fikri Rouzan Ash Shidik
         </h1>
         <p className="font-mono text-sm text-foreground/80 max-w-xl">
-          Description about me, my background, and my journey in the field of
-          technology.
+          An overview of my background, technical expertise, and journey in the
+          tech space.
         </p>
       </div>
 
@@ -39,6 +39,7 @@ export function AboutContent() {
               alt="Muhammad Fikri Rouzan Ash Shidik"
               fill
               priority
+              sizes="(max-width: 768px) 100vw, 33vw"
               className="object-cover object-center"
             />
           </div>

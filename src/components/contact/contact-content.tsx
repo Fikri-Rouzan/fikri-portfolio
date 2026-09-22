@@ -26,8 +26,8 @@ export function ContactContent() {
           Let&apos;s Build Something Together.
         </h1>
         <p className="font-mono text-sm text-foreground/80 max-w-xl">
-          Have a project in mind or collaboration proposal? Leave a message or
-          connect through my socials.
+          Have a project in mind or want to collaborate? Send a message or reach
+          out through my socials.
         </p>
       </div>
 

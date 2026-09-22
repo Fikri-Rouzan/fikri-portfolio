@@ -72,8 +72,8 @@ export function ProjectsContent() {
           Crafted with Passion.
         </h1>
         <p className="font-mono text-sm text-foreground/80 max-w-xl">
-          A collection of projects that I have worked on, showcasing my skills
-          and expertise in various domains.
+          A curated collection of my work, highlighting technical skills and
+          practical solutions across various domains.
         </p>
       </div>
 
@@ -142,7 +142,8 @@ export function ProjectsContent() {
           </div>
           <h3 className="font-heading text-lg mb-2">No Projects Found</h3>
           <p className="font-mono text-xs sm:text-sm text-foreground/70 max-w-sm">
-            Try adjusting your search query or select another category filter.
+            Try adjusting your search query or selecting a different category
+            filter.
           </p>
         </div>
       )}

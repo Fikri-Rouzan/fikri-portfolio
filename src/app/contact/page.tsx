@@ -3,7 +3,8 @@ import { ContactContent } from "@/components/contact/contact-content";
 
 export const metadata: Metadata = {
   title: "Contact",
-  description: "Get in touch with me for collaborations or project inquiries.",
+  description:
+    "Get in touch with me for project inquiries, collaborations, or technical opportunities.",
 };
 
 export default function ContactPage() {

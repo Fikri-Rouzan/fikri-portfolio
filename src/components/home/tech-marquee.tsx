@@ -47,7 +47,7 @@ function MarqueeRow({
 
 export function TechMarquee() {
   return (
-    <div className="w-full flex flex-col gap-3 py-2 my-2 overflow-hidden">
+    <div className="w-full flex flex-col gap-3 py-2 overflow-hidden">
       <div className="relative flex items-center justify-center my-6">
         <div className="absolute inset-0 flex items-center">
           <div className="w-full border-t-2 border-border" />

@@ -279,8 +279,9 @@ export const PROJECTS: Project[] = [
   //   category: "Web",
   //   year: "2026",
   //   image: "/assets/projects/web/fikri-portfolio.png",
-  //   techStack: ["TypeScript", "Next.js", "Tailwind CSS"],
+  //   techStack: ["TypeScript", "Next.js", "Tailwind CSS", "React"],
   //   githubUrl: "https://github.com/Fikri-Rouzan/fikri-portfolio",
+  //   liveUrl: "https://fikri-portfolio-web.vercel.app",
   // },
   {
     id: 22,
