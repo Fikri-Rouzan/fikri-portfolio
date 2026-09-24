@@ -3,7 +3,7 @@ import {
   FaHouse,
   FaUser,
   FaBriefcase,
-  FaTableCellsLarge,
+  FaFolder,
   FaEnvelope,
 } from "react-icons/fa6";
 
@@ -18,6 +18,6 @@ export const NAV_ITEMS: NavItem[] = [
   { label: "Home", href: "/", icon: FaHouse },
   { label: "About", href: "/about", icon: FaUser },
   { label: "Experience", href: "/experience", icon: FaBriefcase },
-  { label: "Projects", href: "/projects", icon: FaTableCellsLarge },
+  { label: "Projects", href: "/projects", icon: FaFolder },
   { label: "Contact", href: "/contact", icon: FaEnvelope, isSpecial: true },
 ];

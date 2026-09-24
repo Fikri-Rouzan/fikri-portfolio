@@ -31,7 +31,7 @@ function MarqueeRow({
           return (
             <div
               key={`${item.name}-${idx}`}
-              className="flex items-center gap-2 px-3.5 py-2 rounded-base border-2 border-border bg-secondary-background text-foreground shadow-[2px_2px_0px_0px_var(--border)] shrink-0"
+              className="flex items-center gap-2 px-3.5 py-2 rounded-base border-2 border-border bg-secondary-background text-foreground shadow-shadow-sm shrink-0"
             >
               <Icon className="w-4 h-4 shrink-0" variant={item.variant} />
               <span className="font-mono text-xs sm:text-sm font-bold whitespace-nowrap">

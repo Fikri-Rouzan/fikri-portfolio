@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import { motion } from "motion/react";
-import { Sparkles, Calendar, Building2, FileText } from "lucide-react";
+import { BriefcaseBusiness, Calendar, Building2, FileText } from "lucide-react";
 import { EXPERIENCES } from "@/data/experience";
 
 export function ExperienceContent() {
@@ -19,8 +19,8 @@ export function ExperienceContent() {
     >
       {/* Header */}
       <div className="mb-10 sm:mb-12">
-        <div className="inline-flex items-center gap-2 px-4 py-2 mb-4 rounded-full border-2 border-border bg-main text-white font-mono text-xs font-bold shadow-[2px_2px_0px_0px_var(--border)]">
-          <Sparkles className="w-3.5 h-3.5 text-white" />
+        <div className="inline-flex items-center gap-2 px-4 py-2 mb-4 rounded-full border-2 border-border bg-main text-white font-mono text-xs font-bold shadow-shadow-sm">
+          <BriefcaseBusiness className="w-3.5 h-3.5 text-white" />
           CAREER HIGHLIGHTS
         </div>
         <h1 className="text-3xl sm:text-4xl font-heading tracking-tight mb-3">
@@ -37,7 +37,7 @@ export function ExperienceContent() {
         {sortedExperiences.map((exp) => (
           <div key={exp.id} className="relative pl-6 sm:pl-8">
             {/* Timeline node */}
-            <div className="absolute -left-px top-7 -translate-x-1/2 -translate-y-1/2 w-7 h-7 rounded-full border-2 border-border bg-main shadow-[2px_2px_0px_0px_var(--border)] flex items-center justify-center z-10">
+            <div className="absolute -left-px top-7 -translate-x-1/2 -translate-y-1/2 w-7 h-7 rounded-full border-2 border-border bg-main shadow-shadow-sm flex items-center justify-center z-10">
               <div className="w-3 h-3 rounded-full bg-background border border-border" />
             </div>
 
@@ -60,7 +60,7 @@ export function ExperienceContent() {
                   <Building2 className="w-4 h-4 text-foreground/70 shrink-0" />
                   <span className="text-foreground/60">{exp.company}</span>
                 </div>
-                <span className="w-fit px-2.5 py-0.5 rounded-base border-2 border-border bg-background text-foreground font-mono text-[11px] uppercase tracking-wider shadow-[2px_2px_0px_0px_var(--border)]">
+                <span className="w-fit px-2.5 py-0.5 rounded-base border-2 border-border bg-background text-foreground font-mono text-[11px] uppercase tracking-wider shadow-shadow-sm">
                   {exp.type}
                 </span>
               </div>
@@ -75,7 +75,7 @@ export function ExperienceContent() {
                 {exp.skills.map((skill) => (
                   <span
                     key={skill}
-                    className="px-2 py-0.5 rounded border border-border bg-background text-foreground font-mono text-[10px] font-bold shadow-[1px_1px_0px_0px_var(--border)]"
+                    className="px-2 py-0.5 rounded border border-border bg-background text-foreground font-mono text-[10px] font-bold shadow-shadow-xs"
                   >
                     {skill}
                   </span>
@@ -94,7 +94,7 @@ export function ExperienceContent() {
                       transition: { duration: 0.15, ease: "easeOut" },
                     }}
                     whileTap={{ scale: 0.95 }}
-                    className="w-fit px-3 py-1.5 rounded-base border-2 border-border bg-main text-white font-mono text-[11px] shadow-[2px_2px_0px_0px_var(--border)] hover:shadow-[4px_4px_0px_0px_var(--border)] flex items-center gap-1.5 cursor-pointer"
+                    className="w-fit px-3 py-1.5 rounded-base border-2 border-border bg-main text-white font-mono text-[11px] shadow-shadow-sm hover:shadow-shadow flex items-center gap-1.5 cursor-pointer"
                   >
                     <FileText className="w-3.5 h-3.5" />
                     <span>View Certificate</span>

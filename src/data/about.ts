@@ -7,6 +7,7 @@ import {
   Layers,
   Wrench,
   Cloudy,
+  Workflow,
 } from "lucide-react";
 import {
   Html5,
@@ -216,5 +217,10 @@ export const TECH_CATEGORIES: TechCategory[] = [
       { name: "Vercel", icon: Vercel, variant: "mono" },
       { name: "Netlify", icon: Netlify },
     ],
+  },
+  {
+    category: "Methodology & Workflow",
+    icon: Workflow,
+    skills: [{ name: "Waterfall" }, { name: "CRISP-DM" }, { name: "Kanban" }],
   },
 ];

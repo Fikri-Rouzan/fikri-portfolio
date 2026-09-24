@@ -72,7 +72,7 @@ function FormFields() {
       {/* Status message */}
       {status.type && (
         <div
-          className={`p-3.5 rounded-base border-2 border-border font-mono text-xs sm:text-sm flex items-center gap-2.5 shadow-[2px_2px_0px_0px_var(--border)] ${
+          className={`p-3.5 rounded-base border-2 border-border font-mono text-xs sm:text-sm flex items-center gap-2.5 shadow-shadow-sm ${
             status.type === "success"
               ? "bg-[#05e17a] text-black"
               : "bg-[#ff4d50] text-white"
@@ -103,7 +103,7 @@ function FormFields() {
             autoComplete="name"
             placeholder="Your Name"
             disabled={isSubmitting}
-            className="w-full px-3.5 py-2.5 rounded-base border-2 border-border bg-background text-foreground text-sm font-sans placeholder:text-foreground/40 focus:outline-none focus:shadow-[2px_2px_0px_0px_var(--border)] transition-shadow"
+            className="w-full px-3.5 py-2.5 rounded-base border-2 border-border bg-background text-foreground text-sm font-sans placeholder:text-foreground/40 focus:outline-none focus:shadow-shadow-sm transition-shadow"
           />
           {errors.name && (
             <span className="font-mono text-[11px] text-red-500 font-bold">
@@ -126,7 +126,7 @@ function FormFields() {
             autoComplete="email"
             placeholder="your.email@example.com"
             disabled={isSubmitting}
-            className="w-full px-3.5 py-2.5 rounded-base border-2 border-border bg-background text-foreground text-sm font-sans placeholder:text-foreground/40 focus:outline-none focus:shadow-[2px_2px_0px_0px_var(--border)] transition-shadow"
+            className="w-full px-3.5 py-2.5 rounded-base border-2 border-border bg-background text-foreground text-sm font-sans placeholder:text-foreground/40 focus:outline-none focus:shadow-shadow-sm transition-shadow"
           />
           {errors.email && (
             <span className="font-mono text-[11px] text-red-500 font-bold">
@@ -151,7 +151,7 @@ function FormFields() {
           autoComplete="off"
           placeholder="e.g. Project Inquiry / Collaboration"
           disabled={isSubmitting}
-          className="w-full px-3.5 py-2.5 rounded-base border-2 border-border bg-background text-foreground text-sm font-sans placeholder:text-foreground/40 focus:outline-none focus:shadow-[2px_2px_0px_0px_var(--border)] transition-shadow"
+          className="w-full px-3.5 py-2.5 rounded-base border-2 border-border bg-background text-foreground text-sm font-sans placeholder:text-foreground/40 focus:outline-none focus:shadow-shadow-sm transition-shadow"
         />
         {errors.subject && (
           <span className="font-mono text-[11px] text-red-500 font-bold">
@@ -175,7 +175,7 @@ function FormFields() {
           autoComplete="off"
           placeholder="Tell me about your project, timeline, or inquiry..."
           disabled={isSubmitting}
-          className="w-full px-3.5 py-2.5 rounded-base border-2 border-border bg-background text-foreground text-sm font-sans placeholder:text-foreground/40 focus:outline-none focus:shadow-[2px_2px_0px_0px_var(--border)] transition-shadow resize-none"
+          className="w-full px-3.5 py-2.5 rounded-base border-2 border-border bg-background text-foreground text-sm font-sans placeholder:text-foreground/40 focus:outline-none focus:shadow-shadow-sm transition-shadow resize-none"
         />
         {errors.message && (
           <span className="font-mono text-[11px] text-red-500 font-bold">
@@ -199,17 +199,17 @@ function FormFields() {
               : {}
           }
           whileTap={!isSubmitting ? { scale: 0.98 } : {}}
-          className="w-full sm:w-auto px-6 py-3 rounded-base border-2 border-border bg-main text-white font-mono text-sm font-bold shadow-shadow hover:shadow-[6px_6px_0px_0px_var(--border)] flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
+          className="w-full sm:w-auto px-6 py-3 rounded-base border-2 border-border bg-main text-white font-mono text-sm font-bold shadow-shadow hover:shadow-shadow-lg flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
         >
           {isSubmitting ? (
             <>
               <Loader2 className="w-4 h-4 animate-spin" />
-              <span>SENDING...</span>
+              <span>Sending...</span>
             </>
           ) : (
             <>
               <Send className="w-4 h-4" />
-              <span>SEND MESSAGE</span>
+              <span>Send Message</span>
             </>
           )}
         </motion.button>

@@ -45,9 +45,9 @@ export function HomeContent() {
           >
             <Link
               href="/projects"
-              className="px-5 py-3 rounded-base border-2 border-border bg-main text-white font-mono text-xs sm:text-sm font-bold shadow-shadow hover:shadow-[6px_6px_0px_0px_var(--border)] flex items-center gap-2 cursor-pointer"
+              className="px-5 py-3 rounded-base border-2 border-border bg-main text-white font-mono text-xs sm:text-sm font-bold shadow-shadow hover:shadow-shadow-lg flex items-center gap-2 cursor-pointer"
             >
-              <span>VIEW PROJECTS</span>
+              <span>View Projects</span>
               <ArrowUpRight className="w-4 h-4" />
             </Link>
           </motion.div>
@@ -63,10 +63,10 @@ export function HomeContent() {
             <a
               href={cvPreviewUrl}
               rel="noopener noreferrer"
-              className="px-5 py-3 rounded-base border-2 border-border bg-secondary-background text-foreground hover:bg-main hover:text-white font-mono text-xs sm:text-sm font-bold shadow-shadow hover:shadow-[6px_6px_0px_0px_var(--border)] flex items-center gap-2 cursor-pointer"
+              className="px-5 py-3 rounded-base border-2 border-border bg-secondary-background text-foreground hover:bg-main hover:text-white font-mono text-xs sm:text-sm font-bold shadow-shadow hover:shadow-shadow-lg flex items-center gap-2 cursor-pointer"
             >
               <FileText className="w-4 h-4" />
-              <span>VIEW CV</span>
+              <span>View CV</span>
             </a>
           </motion.div>
         </div>

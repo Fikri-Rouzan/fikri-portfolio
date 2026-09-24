@@ -38,7 +38,7 @@ export function TechStackSection() {
                   return (
                     <div
                       key={skill.name}
-                      className="flex items-center gap-2 px-3 py-1.5 rounded-base border-2 border-border bg-background text-foreground shadow-[2px_2px_0px_0px_var(--border)] shrink-0"
+                      className="flex items-center gap-2 px-3 py-1.5 rounded-base border-2 border-border bg-background text-foreground shadow-shadow-sm shrink-0"
                     >
                       {Icon && (
                         <Icon

@@ -6,7 +6,7 @@ import { motion, AnimatePresence } from "motion/react";
 import {
   Search,
   ExternalLink,
-  Sparkles,
+  Folder,
   FolderSearch,
   ChevronDown,
 } from "lucide-react";
@@ -64,8 +64,8 @@ export function ProjectsContent() {
     >
       {/* Header */}
       <div className="mb-8">
-        <div className="inline-flex items-center gap-2 px-4 py-2 mb-4 rounded-full border-2 border-border bg-main text-white font-mono text-xs font-bold shadow-[2px_2px_0px_0px_var(--border)]">
-          <Sparkles className="w-3.5 h-3.5 text-white" />
+        <div className="inline-flex items-center gap-2 px-4 py-2 mb-4 rounded-full border-2 border-border bg-main text-white font-mono text-xs font-bold shadow-shadow-sm">
+          <Folder className="w-3.5 h-3.5 text-white" />
           FEATURED PROJECTS
         </div>
         <h1 className="text-3xl sm:text-4xl font-heading tracking-tight mb-3">
@@ -164,7 +164,7 @@ export function ProjectsContent() {
                 y: -4,
                 transition: { duration: 0.15, ease: "easeOut" },
               }}
-              className="rounded-base border-2 border-border bg-secondary-background shadow-shadow hover:shadow-[6px_6px_0px_0px_var(--border)] flex flex-col overflow-hidden group"
+              className="rounded-base border-2 border-border bg-secondary-background shadow-shadow hover:shadow-shadow-lg flex flex-col overflow-hidden group"
             >
               {/* Banner image */}
               <div className="relative aspect-video w-full border-b-2 border-border overflow-hidden bg-muted">
@@ -177,14 +177,14 @@ export function ProjectsContent() {
                   className="object-cover"
                 />
                 {/* Year badge */}
-                <div className="absolute top-3 right-3 px-2.5 py-1 rounded-base border-2 border-border bg-main text-white font-mono text-xs font-bold shadow-[2px_2px_0px_0px_var(--border)]">
+                <div className="absolute top-3 right-3 px-2.5 py-1 rounded-base border-2 border-border bg-main text-white font-mono text-xs font-bold shadow-shadow-sm">
                   {project.year}
                 </div>
               </div>
 
               {/* Action bar */}
               <div className="px-5 pt-4 pb-2 flex items-center justify-between gap-2 border-b border-border/40">
-                <span className="px-2.5 py-1 rounded-base border-2 border-border bg-background text-foreground font-mono text-[11px] tracking-wider uppercase shadow-[2px_2px_0px_0px_var(--border)]">
+                <span className="px-2.5 py-1 rounded-base border-2 border-border bg-background text-foreground font-mono text-[11px] tracking-wider uppercase shadow-shadow-sm">
                   {project.category}
                 </span>
 
@@ -201,7 +201,7 @@ export function ProjectsContent() {
                         transition: { duration: 0.15, ease: "easeOut" },
                       }}
                       whileTap={{ scale: 0.95 }}
-                      className="p-2 rounded-base border-2 border-border bg-background text-foreground hover:bg-main hover:text-white shadow-[2px_2px_0px_0px_var(--border)] hover:shadow-[3px_3px_0px_0px_var(--border)] flex items-center justify-center cursor-pointer"
+                      className="p-2 rounded-base border-2 border-border bg-background text-foreground hover:bg-main hover:text-white shadow-shadow-sm hover:shadow-shadow-md flex items-center justify-center cursor-pointer"
                     >
                       <Github variant="mono" className="w-3.5 h-3.5" />
                     </motion.a>
@@ -218,7 +218,7 @@ export function ProjectsContent() {
                         transition: { duration: 0.15, ease: "easeOut" },
                       }}
                       whileTap={{ scale: 0.95 }}
-                      className="p-2 rounded-base border-2 border-border bg-background text-foreground hover:bg-main hover:text-white shadow-[2px_2px_0px_0px_var(--border)] hover:shadow-[3px_3px_0px_0px_var(--border)] flex items-center justify-center cursor-pointer"
+                      className="p-2 rounded-base border-2 border-border bg-background text-foreground hover:bg-main hover:text-white shadow-shadow-sm hover:shadow-shadow-md flex items-center justify-center cursor-pointer"
                     >
                       <ExternalLink className="w-3.5 h-3.5" />
                     </motion.a>
@@ -242,7 +242,7 @@ export function ProjectsContent() {
                   {project.techStack.map((tech) => (
                     <span
                       key={tech}
-                      className="px-2 py-0.5 rounded border border-border bg-background text-foreground font-mono text-[10px] shadow-[1px_1px_0px_0px_var(--border)]"
+                      className="px-2 py-0.5 rounded border border-border bg-background text-foreground font-mono text-[10px] shadow-shadow-xs"
                     >
                       {tech}
                     </span>
@@ -267,9 +267,9 @@ export function ProjectsContent() {
               transition: { duration: 0.15, ease: "easeOut" },
             }}
             whileTap={{ scale: 0.98 }}
-            className="px-6 py-3 rounded-base border-2 border-border bg-secondary-background text-foreground hover:bg-main hover:text-white font-mono text-xs sm:text-sm font-bold shadow-shadow hover:shadow-[6px_6px_0px_0px_var(--border)] flex items-center gap-2 cursor-pointer"
+            className="px-6 py-3 rounded-base border-2 border-border bg-secondary-background text-foreground hover:bg-main hover:text-white font-mono text-xs sm:text-sm font-bold shadow-shadow hover:shadow-shadow-lg flex items-center gap-2 cursor-pointer"
           >
-            <span>SHOW MORE</span>
+            <span>Show More</span>
             <ChevronDown className="w-4 h-4" />
           </motion.button>
         </div>

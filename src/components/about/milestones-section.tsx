@@ -40,8 +40,8 @@ export function MilestonesSection() {
             whileTap={{ scale: 0.95 }}
             className={`flex items-center gap-2 px-4 py-2.5 rounded-base font-mono text-xs sm:text-sm font-bold border-2 cursor-pointer ${
               activeTab === "education"
-                ? "border-border bg-main text-white shadow-[2px_2px_0px_0px_var(--border)]"
-                : "border-border bg-secondary-background text-foreground shadow-[2px_2px_0px_0px_var(--border)] hover:bg-background"
+                ? "border-border bg-main text-white shadow-shadow-sm"
+                : "border-border bg-secondary-background text-foreground shadow-shadow-sm hover:bg-background"
             }`}
           >
             <GraduationCap className="w-4 h-4 shrink-0" />
@@ -54,8 +54,8 @@ export function MilestonesSection() {
             whileTap={{ scale: 0.95 }}
             className={`flex items-center gap-2 px-4 py-2.5 rounded-base font-mono text-xs sm:text-sm font-bold border-2 cursor-pointer ${
               activeTab === "certification"
-                ? "border-border bg-main text-white shadow-[2px_2px_0px_0px_var(--border)]"
-                : "border-border bg-secondary-background text-foreground shadow-[2px_2px_0px_0px_var(--border)] hover:bg-background"
+                ? "border-border bg-main text-white shadow-shadow-sm"
+                : "border-border bg-secondary-background text-foreground shadow-shadow-sm hover:bg-background"
             }`}
           >
             <Award className="w-4 h-4 shrink-0" />
@@ -97,7 +97,7 @@ export function MilestonesSection() {
                     <GraduationCap className="w-4 h-4 shrink-0" />
                     <span>{edu.major}</span>
                   </div>
-                  <div className="w-fit px-2.5 py-0.5 rounded-base border-2 border-border bg-background font-mono text-xs font-bold shadow-[2px_2px_0px_0px_var(--border)]">
+                  <div className="w-fit px-2.5 py-0.5 rounded-base border-2 border-border bg-background font-mono text-xs font-bold shadow-shadow-sm">
                     GPA: {edu.gpa}
                   </div>
                 </div>
@@ -145,7 +145,7 @@ export function MilestonesSection() {
                   {cert.skills.map((skill) => (
                     <span
                       key={skill}
-                      className="px-2 py-0.5 rounded border border-border bg-background text-foreground font-mono text-[10px] shadow-[1px_1px_0px_0px_var(--border)]"
+                      className="px-2 py-0.5 rounded border border-border bg-background text-foreground font-mono text-[10px] shadow-shadow-xs"
                     >
                       {skill}
                     </span>
@@ -163,7 +163,7 @@ export function MilestonesSection() {
                       transition: { duration: 0.15, ease: "easeOut" },
                     }}
                     whileTap={{ scale: 0.95 }}
-                    className="w-fit px-3 py-1.5 rounded-base border-2 border-border bg-main text-white font-mono text-xs shadow-[2px_2px_0px_0px_var(--border)] hover:shadow-[4px_4px_0px_0px_var(--border)] flex items-center gap-1.5 cursor-pointer"
+                    className="w-fit px-3 py-1.5 rounded-base border-2 border-border bg-main text-white font-mono text-xs shadow-shadow-sm hover:shadow-shadow flex items-center gap-1.5 cursor-pointer"
                   >
                     <FileText className="w-3.5 h-3.5" />
                     <span>View Certificate</span>

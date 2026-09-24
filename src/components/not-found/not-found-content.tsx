@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { motion } from "motion/react";
-import { FileQuestion } from "lucide-react";
+import { FileQuestion, Home } from "lucide-react";
 
 export function NotFoundContent() {
   return (
@@ -13,7 +13,7 @@ export function NotFoundContent() {
       className="min-h-[70vh] flex flex-col items-center justify-center p-4 text-center"
     >
       {/* Icon badge */}
-      <div className="p-4 rounded-full border-2 border-border bg-main text-white shadow-[4px_4px_0px_0px_var(--border)] mb-6">
+      <div className="p-4 rounded-full border-2 border-border bg-main text-white shadow-shadow mb-6">
         <FileQuestion className="w-10 h-10" />
       </div>
 
@@ -35,9 +35,10 @@ export function NotFoundContent() {
       >
         <Link
           href="/"
-          className="inline-flex items-center justify-center px-6 py-3 rounded-base border-2 border-border bg-main text-white font-mono text-xs sm:text-sm font-bold shadow-shadow hover:shadow-[6px_6px_0px_0px_var(--border)] cursor-pointer"
+          className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-base border-2 border-border bg-main text-white font-mono text-xs sm:text-sm font-bold shadow-shadow hover:shadow-shadow-lg cursor-pointer"
         >
-          RETURN TO HOME
+          <Home className="w-4 h-4" />
+          <span>Back to Home</span>
         </Link>
       </motion.div>
     </motion.div>

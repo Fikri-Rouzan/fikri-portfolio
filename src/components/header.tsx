@@ -16,20 +16,20 @@ export function Header() {
         </div>
 
         {/* Open to work badge */}
-        <div className="hidden md:flex items-center gap-2 px-3 py-1 rounded-full border-2 border-border bg-background shadow-[2px_2px_0px_0px_var(--border)] font-mono text-xs text-foreground md:justify-self-center">
+        <div className="hidden md:flex items-center gap-2 px-3 py-1 rounded-full border-2 border-border bg-background shadow-shadow-sm font-mono text-xs text-foreground md:justify-self-center">
           <span className="relative flex h-2 w-2">
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
             <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
           </span>
-          OPEN TO WORK
+          <span className="uppercase">Open to Work</span>
         </div>
 
         {/* Theme toggle */}
         <div className="flex items-center gap-3 md:justify-self-end">
           {/* Badge for mobile */}
-          <div className="flex md:hidden items-center gap-1.5 px-2.5 py-1 rounded-full border-2 border-border bg-background shadow-[2px_2px_0px_0px_var(--border)] text-[10px] font-mono">
+          <div className="flex md:hidden items-center gap-1.5 px-2.5 py-1 rounded-full border-2 border-border bg-background shadow-shadow-sm text-[10px] font-mono">
             <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
-            OPEN
+            <span className="uppercase">Open</span>
           </div>
           <ThemeToggle />
         </div>
