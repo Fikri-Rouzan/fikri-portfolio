@@ -30,10 +30,10 @@ export function Footer() {
                   rel={item.isExternal ? "noopener noreferrer" : undefined}
                   whileHover={{
                     x: -2,
-                    y: -4,
+                    y: -3,
                     transition: { duration: 0.15, ease: "easeOut" },
                   }}
-                  whileTap={{ scale: 0.98 }}
+                  whileTap={{ scale: 0.96 }}
                   className="p-2.5 rounded-base border-2 border-border bg-background text-foreground shadow-shadow-sm hover:shadow-shadow hover:bg-main hover:text-white flex items-center justify-center cursor-pointer"
                 >
                   <Icon

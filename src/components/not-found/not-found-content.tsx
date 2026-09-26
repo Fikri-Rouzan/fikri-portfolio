@@ -28,10 +28,10 @@ export function NotFoundContent() {
       <motion.div
         whileHover={{
           x: -2,
-          y: -4,
+          y: -3,
           transition: { duration: 0.15, ease: "easeOut" },
         }}
-        whileTap={{ scale: 0.98 }}
+        whileTap={{ scale: 0.96 }}
       >
         <Link
           href="/"

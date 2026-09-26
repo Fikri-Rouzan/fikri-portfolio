@@ -8,6 +8,14 @@ Designed to present a comprehensive overview of my engineering capabilities, sof
 
 ## 🛠️ Tech Stack
 
+| Category                    | Technologies Used                                                                                                                |
+| :-------------------------- | :------------------------------------------------------------------------------------------------------------------------------- |
+| 🌐 **Programming Language** | `TypeScript`                                                                                                                     |
+| 🧩 **Frameworks**           | `Next.js`, `Tailwind CSS`                                                                                                        |
+| ⚛️ **Libraries**            | `React`, `shadcn/ui`, `next-themes`, `Zod`, `React Hook Form`,<br>`React Google Recaptcha V3`, `Motion`, `React Icons`, `theSVG` |
+| 📩 **Email Service**        | `Resend`                                                                                                                         |
+| 🚀 **Deployment**           | `Vercel`                                                                                                                         |
+
 ---
 
 ## ⚙️ Setup Instructions

@@ -8,9 +8,10 @@ import {
   useGoogleReCaptcha,
 } from "react-google-recaptcha-v3";
 import { motion } from "motion/react";
-import { Send, CheckCircle2, AlertCircle, Loader2 } from "lucide-react";
 import { contactSchema, ContactFormData } from "@/lib/schemas/contact";
 import { sendContactEmail } from "@/actions/contact";
+import { FORM_FIELDS } from "@/data/contact";
+import { Send, CheckCircle2, AlertCircle, Loader2 } from "lucide-react";
 
 function FormFields() {
   const { executeRecaptcha } = useGoogleReCaptcha();
@@ -40,26 +41,32 @@ function FormFields() {
       return;
     }
 
-    const token = await executeRecaptcha("contact_form");
+    try {
+      const token = await executeRecaptcha("contact_form");
 
-    const result = await sendContactEmail({
-      formData: data,
-      token,
-    });
-
-    // Handle the result of the email sending
-    if (result.success) {
-      setStatus({
-        type: "success",
-        message: "Message sent successfully! I'll get back to you soon.",
+      const result = await sendContactEmail({
+        formData: data,
+        token,
       });
-      reset();
-    } else {
+
+      if (result.success) {
+        setStatus({
+          type: "success",
+          message: "Message sent successfully! I'll get back to you soon.",
+        });
+        reset();
+      } else {
+        setStatus({
+          type: "error",
+          message:
+            result.error ||
+            "Something went wrong while sending your message. Please try again.",
+        });
+      }
+    } catch {
       setStatus({
         type: "error",
-        message:
-          result.error ||
-          "Something went wrong while sending your message. Please try again.",
+        message: "reCAPTCHA verification timed out. Please try again.",
       });
     }
   };
@@ -87,101 +94,55 @@ function FormFields() {
         </div>
       )}
 
-      {/* Name and Email */}
+      {/* Input fields */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-        <div className="flex flex-col gap-1.5">
-          <label
-            htmlFor="contact-name"
-            className="font-mono text-xs uppercase tracking-wider text-foreground"
-          >
-            Name *
-          </label>
-          <input
-            {...register("name")}
-            id="contact-name"
-            type="text"
-            autoComplete="name"
-            placeholder="Your Name"
-            disabled={isSubmitting}
-            className="w-full px-3.5 py-2.5 rounded-base border-2 border-border bg-background text-foreground text-sm font-sans placeholder:text-foreground/40 focus:outline-none focus:shadow-shadow-sm transition-shadow"
-          />
-          {errors.name && (
-            <span className="font-mono text-[11px] text-red-500 font-bold">
-              {errors.name.message}
-            </span>
-          )}
-        </div>
+        {FORM_FIELDS.map((field) => {
+          const fieldError = errors[field.name];
 
-        <div className="flex flex-col gap-1.5">
-          <label
-            htmlFor="contact-email"
-            className="font-mono text-xs uppercase tracking-wider text-foreground"
-          >
-            Email *
-          </label>
-          <input
-            {...register("email")}
-            id="contact-email"
-            type="email"
-            autoComplete="email"
-            placeholder="your.email@example.com"
-            disabled={isSubmitting}
-            className="w-full px-3.5 py-2.5 rounded-base border-2 border-border bg-background text-foreground text-sm font-sans placeholder:text-foreground/40 focus:outline-none focus:shadow-shadow-sm transition-shadow"
-          />
-          {errors.email && (
-            <span className="font-mono text-[11px] text-red-500 font-bold">
-              {errors.email.message}
-            </span>
-          )}
-        </div>
-      </div>
+          return (
+            <div
+              key={field.name}
+              className={`flex flex-col gap-1.5 ${
+                field.fullWidth ? "sm:col-span-2" : "col-span-1"
+              }`}
+            >
+              <label
+                htmlFor={`contact-${field.name}`}
+                className="font-mono text-xs uppercase tracking-wider text-foreground"
+              >
+                {field.label}
+              </label>
 
-      {/* Subject */}
-      <div className="flex flex-col gap-1.5">
-        <label
-          htmlFor="contact-subject"
-          className="font-mono text-xs uppercase tracking-wider text-foreground"
-        >
-          Subject *
-        </label>
-        <input
-          {...register("subject")}
-          id="contact-subject"
-          type="text"
-          autoComplete="off"
-          placeholder="e.g. Project Inquiry / Collaboration"
-          disabled={isSubmitting}
-          className="w-full px-3.5 py-2.5 rounded-base border-2 border-border bg-background text-foreground text-sm font-sans placeholder:text-foreground/40 focus:outline-none focus:shadow-shadow-sm transition-shadow"
-        />
-        {errors.subject && (
-          <span className="font-mono text-[11px] text-red-500 font-bold">
-            {errors.subject.message}
-          </span>
-        )}
-      </div>
+              {field.type === "textarea" ? (
+                <textarea
+                  {...register(field.name)}
+                  id={`contact-${field.name}`}
+                  rows={field.rows || 5}
+                  autoComplete={field.autoComplete}
+                  placeholder={field.placeholder}
+                  disabled={isSubmitting}
+                  className="w-full px-3.5 py-2.5 rounded-base border-2 border-border bg-background text-foreground text-sm font-sans placeholder:text-foreground/40 focus:outline-none focus:shadow-shadow-sm transition-shadow resize-none"
+                />
+              ) : (
+                <input
+                  {...register(field.name)}
+                  id={`contact-${field.name}`}
+                  type={field.type}
+                  autoComplete={field.autoComplete}
+                  placeholder={field.placeholder}
+                  disabled={isSubmitting}
+                  className="w-full px-3.5 py-2.5 rounded-base border-2 border-border bg-background text-foreground text-sm font-sans placeholder:text-foreground/40 focus:outline-none focus:shadow-shadow-sm transition-shadow"
+                />
+              )}
 
-      {/* Message */}
-      <div className="flex flex-col gap-1.5">
-        <label
-          htmlFor="contact-message"
-          className="font-mono text-xs uppercase tracking-wider text-foreground"
-        >
-          Message *
-        </label>
-        <textarea
-          {...register("message")}
-          id="contact-message"
-          rows={5}
-          autoComplete="off"
-          placeholder="Tell me about your project, timeline, or inquiry..."
-          disabled={isSubmitting}
-          className="w-full px-3.5 py-2.5 rounded-base border-2 border-border bg-background text-foreground text-sm font-sans placeholder:text-foreground/40 focus:outline-none focus:shadow-shadow-sm transition-shadow resize-none"
-        />
-        {errors.message && (
-          <span className="font-mono text-[11px] text-red-500 font-bold">
-            {errors.message.message}
-          </span>
-        )}
+              {fieldError && (
+                <span className="font-mono text-[11px] text-red-500 font-bold">
+                  {fieldError.message}
+                </span>
+              )}
+            </div>
+          );
+        })}
       </div>
 
       {/* Submit button */}
@@ -193,12 +154,12 @@ function FormFields() {
             !isSubmitting
               ? {
                   x: -2,
-                  y: -4,
+                  y: -3,
                   transition: { duration: 0.15, ease: "easeOut" },
                 }
               : {}
           }
-          whileTap={!isSubmitting ? { scale: 0.98 } : {}}
+          whileTap={!isSubmitting ? { scale: 0.96 } : {}}
           className="w-full sm:w-auto px-6 py-3 rounded-base border-2 border-border bg-main text-white font-mono text-sm font-bold shadow-shadow hover:shadow-shadow-lg flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
         >
           {isSubmitting ? (

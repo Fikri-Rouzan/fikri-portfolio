@@ -1,5 +1,6 @@
 import { ElementType } from "react";
 import {
+  FileText,
   Layout,
   Server,
   Smartphone,
@@ -10,6 +11,8 @@ import {
   Workflow,
 } from "lucide-react";
 import {
+  Linkedin,
+  Github,
   Html5,
   CssNew,
   Javascript,
@@ -63,6 +66,19 @@ import {
   Netlify,
 } from "@thesvg/react";
 
+export interface AboutStat {
+  label: string;
+  value: string;
+}
+
+export interface AboutActionLink {
+  label: string;
+  href: string;
+  icon: ElementType;
+  iconVariant?: "mono";
+  isExternal?: boolean;
+}
+
 export interface EducationItem {
   id: number;
   university: string;
@@ -81,17 +97,55 @@ export interface CertificationItem {
   skills: string[];
 }
 
+export interface TechCategory {
+  category: string;
+  icon?: ElementType;
+  skills: TechSkill[];
+}
+
 export interface TechSkill {
   name: string;
   icon?: ElementType;
   variant?: "mono" | "light";
 }
 
-export interface TechCategory {
-  category: string;
-  icon?: ElementType;
-  skills: TechSkill[];
-}
+export const ABOUT_BIO: string[] = [
+  "Final-year Informatics Engineering student at Syarif Hidayatullah State Islamic University Jakarta with hands-on experience in data science and full-stack web development. Proficient in Python, SQL, React, and Laravel, focusing on building practical, scalable, and data-driven applications.",
+  "Throughout my academic journey and hands-on projects, I have developed practical expertise across modern frontend frameworks, backend API architectures, and machine learning pipelines. I continuously adapt to emerging tech ecosystems, maintaining a strong focus on writing clean and maintainable code.",
+];
+
+export const ABOUT_STATS: AboutStat[] = [
+  {
+    label: "Started in",
+    value: "2023",
+  },
+  {
+    label: "GPA",
+    value: "3.77 / 4.00",
+  },
+];
+
+export const ABOUT_ACTIONS: AboutActionLink[] = [
+  {
+    label: "View CV",
+    href: "/preview/cv-muhammad-fikri-rouzan-ash-shidik",
+    icon: FileText,
+    isExternal: false,
+  },
+  {
+    label: "LinkedIn",
+    href: "https://www.linkedin.com/in/fikrirouzan",
+    icon: Linkedin,
+    isExternal: true,
+  },
+  {
+    label: "GitHub",
+    href: "https://github.com/Fikri-Rouzan",
+    icon: Github,
+    iconVariant: "mono",
+    isExternal: true,
+  },
+];
 
 export const EDUCATION_DATA: EducationItem[] = [
   {

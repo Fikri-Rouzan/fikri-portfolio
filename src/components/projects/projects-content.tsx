@@ -3,6 +3,7 @@
 import * as React from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "motion/react";
+import { PROJECTS, PROJECT_CATEGORIES, ProjectCategory } from "@/data/projects";
 import {
   Search,
   ExternalLink,
@@ -11,7 +12,6 @@ import {
   ChevronDown,
 } from "lucide-react";
 import { Github } from "@thesvg/react";
-import { PROJECTS, PROJECT_CATEGORIES, ProjectCategory } from "@/data/projects";
 
 const INITIAL_VISIBLE_COUNT = 6;
 
@@ -94,7 +94,7 @@ export function ProjectsContent() {
         />
       </div>
 
-      {/* Category Tabs */}
+      {/* Category tabs */}
       <div className="flex items-center gap-2 overflow-x-auto pb-2 mb-6 border-b-2 border-border scrollbar-none">
         {PROJECT_CATEGORIES.map((category) => {
           const isActive = selectedCategory === category;
@@ -130,7 +130,7 @@ export function ProjectsContent() {
         </h2>
         <span className="text-foreground/70">
           {filteredProjects.length}{" "}
-          {filteredProjects.length === 1 ? "project" : "projects"} found
+          {filteredProjects.length <= 1 ? "project" : "projects"} found
         </span>
       </div>
 
@@ -148,7 +148,7 @@ export function ProjectsContent() {
         </div>
       )}
 
-      {/* Project Grid */}
+      {/* Project grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         <AnimatePresence mode="popLayout">
           {displayedProjects.map((project, index) => (
@@ -161,7 +161,7 @@ export function ProjectsContent() {
               transition={{ duration: 0.2 }}
               whileHover={{
                 x: -2,
-                y: -4,
+                y: -3,
                 transition: { duration: 0.15, ease: "easeOut" },
               }}
               className="rounded-base border-2 border-border bg-secondary-background shadow-shadow hover:shadow-shadow-lg flex flex-col overflow-hidden group"
@@ -172,7 +172,7 @@ export function ProjectsContent() {
                   src={project.image}
                   alt={project.title}
                   fill
-                  priority={index < 2}
+                  priority={index < 3}
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   className="object-cover"
                 />
@@ -263,10 +263,10 @@ export function ProjectsContent() {
             }
             whileHover={{
               x: -2,
-              y: -4,
+              y: -3,
               transition: { duration: 0.15, ease: "easeOut" },
             }}
-            whileTap={{ scale: 0.98 }}
+            whileTap={{ scale: 0.96 }}
             className="px-6 py-3 rounded-base border-2 border-border bg-secondary-background text-foreground hover:bg-main hover:text-white font-mono text-xs sm:text-sm font-bold shadow-shadow hover:shadow-shadow-lg flex items-center gap-2 cursor-pointer"
           >
             <span>Show More</span>

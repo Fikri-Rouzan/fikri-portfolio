@@ -2,14 +2,12 @@
 
 import Link from "next/link";
 import { motion } from "motion/react";
-import { ArrowUpRight, FileText } from "lucide-react";
 import { TypingRoles } from "@/components/home/typing-roles";
+import { HOME_CTA_BUTTONS } from "@/data/home";
 import { TechMarquee } from "@/components/home/tech-marquee";
 import { GithubContributions } from "@/components/home/github-contributions";
 
 export function HomeContent() {
-  const cvPreviewUrl = "/preview/cv-muhammad-fikri-rouzan-ash-shidik";
-
   return (
     <motion.section
       initial={{ opacity: 0, y: 16 }}
@@ -35,40 +33,41 @@ export function HomeContent() {
 
         {/* CTA buttons */}
         <div className="flex flex-wrap items-center gap-3.5 pt-2">
-          <motion.div
-            whileHover={{
-              x: -2,
-              y: -4,
-              transition: { duration: 0.15, ease: "easeOut" },
-            }}
-            whileTap={{ scale: 0.98 }}
-          >
-            <Link
-              href="/projects"
-              className="px-5 py-3 rounded-base border-2 border-border bg-main text-white font-mono text-xs sm:text-sm font-bold shadow-shadow hover:shadow-shadow-lg flex items-center gap-2 cursor-pointer"
-            >
-              <span>View Projects</span>
-              <ArrowUpRight className="w-4 h-4" />
-            </Link>
-          </motion.div>
+          {HOME_CTA_BUTTONS.map((cta) => {
+            const Icon = cta.icon;
+            const isPrimary = cta.variant === "primary";
 
-          <motion.div
-            whileHover={{
-              x: -2,
-              y: -4,
-              transition: { duration: 0.15, ease: "easeOut" },
-            }}
-            whileTap={{ scale: 0.98 }}
-          >
-            <a
-              href={cvPreviewUrl}
-              rel="noopener noreferrer"
-              className="px-5 py-3 rounded-base border-2 border-border bg-secondary-background text-foreground hover:bg-main hover:text-white font-mono text-xs sm:text-sm font-bold shadow-shadow hover:shadow-shadow-lg flex items-center gap-2 cursor-pointer"
-            >
-              <FileText className="w-4 h-4" />
-              <span>View CV</span>
-            </a>
-          </motion.div>
+            return (
+              <motion.div
+                key={cta.label}
+                whileHover={{
+                  x: -2,
+                  y: -3,
+                  transition: { duration: 0.15, ease: "easeOut" },
+                }}
+                whileTap={{ scale: 0.96 }}
+              >
+                <Link
+                  href={cta.href}
+                  target={cta.isExternal ? "_blank" : undefined}
+                  rel={cta.isExternal ? "noopener noreferrer" : undefined}
+                  className={`px-5 py-3 rounded-base border-2 border-border font-mono text-xs sm:text-sm font-bold shadow-shadow hover:shadow-shadow-lg flex items-center gap-2 cursor-pointer ${
+                    isPrimary
+                      ? "bg-main text-white"
+                      : "bg-secondary-background text-foreground hover:bg-main hover:text-white"
+                  }`}
+                >
+                  {cta.iconPosition === "left" && (
+                    <Icon className="w-4 h-4 shrink-0" />
+                  )}
+                  <span>{cta.label}</span>
+                  {cta.iconPosition === "right" && (
+                    <Icon className="w-4 h-4 shrink-0" />
+                  )}
+                </Link>
+              </motion.div>
+            );
+          })}
         </div>
       </div>
 

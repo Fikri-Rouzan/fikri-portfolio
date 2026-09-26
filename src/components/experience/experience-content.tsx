@@ -2,8 +2,8 @@
 
 import * as React from "react";
 import { motion } from "motion/react";
-import { BriefcaseBusiness, Calendar, Building2, FileText } from "lucide-react";
 import { EXPERIENCES } from "@/data/experience";
+import { BriefcaseBusiness, Calendar, Building2, FileText } from "lucide-react";
 
 export function ExperienceContent() {
   const sortedExperiences = React.useMemo(() => {
@@ -75,7 +75,7 @@ export function ExperienceContent() {
                 {exp.skills.map((skill) => (
                   <span
                     key={skill}
-                    className="px-2 py-0.5 rounded border border-border bg-background text-foreground font-mono text-[10px] font-bold shadow-shadow-xs"
+                    className="px-2 py-0.5 rounded border border-border bg-background text-foreground font-mono text-[10px] shadow-shadow-xs"
                   >
                     {skill}
                   </span>

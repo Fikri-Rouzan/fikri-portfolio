@@ -49,9 +49,14 @@ export function GithubContributions() {
           <span className="font-mono text-xs sm:text-sm font-bold text-foreground/70">
             GitHub Contributions
           </span>
-          <span className="font-mono text-xs sm:text-sm text-foreground/70">
+          <a
+            href={`https://github.com/${username}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-mono text-xs sm:text-sm text-foreground/80 hover:text-main hover:underline cursor-pointer w-fit"
+          >
             @{username}
-          </span>
+          </a>
         </div>
 
         {/* Contribution graph */}

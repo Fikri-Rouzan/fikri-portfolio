@@ -2,9 +2,12 @@
 
 import Image from "next/image";
 import { motion } from "motion/react";
-import { UserRound } from "lucide-react";
+import { ABOUT_BIO, ABOUT_STATS } from "@/data/about";
+import { ABOUT_ACTIONS } from "@/data/about";
 import { MilestonesSection } from "@/components/about/milestones-section";
 import { TechStackSection } from "@/components/about/tech-stack-section";
+import { UserRound, ArrowUpRight } from "lucide-react";
+import { FaEnvelope, FaMapPin } from "react-icons/fa6";
 
 export function AboutContent() {
   return (
@@ -29,11 +32,11 @@ export function AboutContent() {
         </p>
       </div>
 
-      {/* Profile photo & bio grid */}
-      <div className="grid grid-cols-1 md:grid-cols-12 gap-6 items-stretch">
-        {/* Profile image container */}
-        <div className="md:col-span-4 flex flex-col">
-          <div className="relative w-full h-full min-h-95 sm:min-h-110 rounded-base border-2 border-border bg-secondary-background overflow-hidden shadow-shadow">
+      {/* Profile photo & Bio grid */}
+      <div className="grid grid-cols-1 md:grid-cols-12 gap-5 items-stretch">
+        <div className="md:col-span-4 flex flex-col justify-between gap-5">
+          {/* Profile image */}
+          <div className="relative w-full flex-1 min-h-110 rounded-base border-2 border-border bg-secondary-background overflow-hidden shadow-shadow">
             <Image
               src="/assets/about/profile.png"
               alt="Muhammad Fikri Rouzan Ash Shidik"
@@ -43,51 +46,95 @@ export function AboutContent() {
               className="object-cover object-center"
             />
           </div>
+
+          {/* Email & Location */}
+          <div className="p-4 sm:p-5 rounded-base border-2 border-border bg-secondary-background text-foreground shadow-shadow flex flex-col justify-center gap-3">
+            <div className="flex items-center gap-2.5 font-mono text-xs sm:text-sm overflow-hidden">
+              <FaEnvelope className="w-4 h-4 text-foreground shrink-0" />
+              <a
+                href="mailto:fikrirzn@gmail.com"
+                className="truncate font-bold text-foreground/80 hover:underline cursor-pointer"
+              >
+                fikrirzn@gmail.com
+              </a>
+            </div>
+
+            <div className="flex items-center gap-2.5 font-mono text-xs sm:text-sm overflow-hidden">
+              <FaMapPin className="w-4 h-4 text-foreground shrink-0" />
+              <span className="truncate font-bold text-foreground/80">
+                South Tangerang, Indonesia
+              </span>
+            </div>
+          </div>
         </div>
 
         <div className="md:col-span-8 flex flex-col justify-between gap-5">
           {/* Description card */}
           <div className="p-6 sm:p-8 rounded-base border-2 border-border bg-secondary-background text-foreground shadow-shadow flex flex-col justify-center gap-4 flex-1">
-            <p className="font-sans text-sm sm:text-base text-foreground/85 leading-relaxed">
-              Final-year Informatics Engineering student at Syarif Hidayatullah
-              State Islamic University Jakarta with hands-on experience in data
-              science and full-stack web development. Proficient in Python, SQL,
-              React, and Laravel, focusing on building practical, scalable, and
-              data-driven applications.
-            </p>
-            <p className="font-sans text-sm sm:text-base text-foreground/85 leading-relaxed">
-              Throughout my academic journey and hands-on projects, I have
-              developed practical expertise across modern frontend frameworks,
-              backend API architectures, and machine learning pipelines. I
-              continuously adapt to emerging tech ecosystems, maintaining a
-              strong focus on writing clean and maintainable code.
-            </p>
+            {ABOUT_BIO.map((paragraph, index) => (
+              <p
+                key={index}
+                className="font-sans text-sm sm:text-base text-foreground/85 leading-relaxed"
+              >
+                {paragraph}
+              </p>
+            ))}
           </div>
 
           {/* Stat cards */}
           <div className="grid grid-cols-2 gap-4">
-            <div className="p-4 sm:p-5 rounded-base border-2 border-border bg-secondary-background text-foreground shadow-shadow flex flex-col justify-between gap-1">
-              <span className="font-mono text-xs text-foreground/70 uppercase tracking-wider">
-                Started in
-              </span>
-              <span className="font-heading font-bold text-xl sm:text-2xl text-main">
-                2023
-              </span>
-            </div>
+            {ABOUT_STATS.map((stat) => (
+              <div
+                key={stat.label}
+                className="p-4 sm:p-5 rounded-base border-2 border-border bg-secondary-background text-foreground shadow-shadow flex flex-col justify-between gap-1"
+              >
+                <span className="font-mono text-xs text-foreground/70 uppercase tracking-wider">
+                  {stat.label}
+                </span>
+                <span className="font-heading font-bold text-xl sm:text-2xl text-main">
+                  {stat.value}
+                </span>
+              </div>
+            ))}
+          </div>
 
-            <div className="p-4 sm:p-5 rounded-base border-2 border-border bg-secondary-background text-foreground shadow-shadow flex flex-col justify-between gap-1">
-              <span className="font-mono text-xs text-foreground/70 tracking-wider">
-                GPA
-              </span>
-              <span className="font-heading font-bold text-xl sm:text-2xl text-main">
-                3.77 / 4.00
-              </span>
-            </div>
+          {/* Action cards */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            {ABOUT_ACTIONS.map((action) => {
+              const Icon = action.icon;
+
+              return (
+                <motion.a
+                  key={action.label}
+                  href={action.href}
+                  target={action.isExternal ? "_blank" : undefined}
+                  rel={action.isExternal ? "noopener noreferrer" : undefined}
+                  whileHover={{
+                    x: -2,
+                    y: -3,
+                    transition: { duration: 0.15, ease: "easeOut" },
+                  }}
+                  whileTap={{ scale: 0.96 }}
+                  className="p-4 sm:p-5 rounded-base border-2 border-border bg-secondary-background text-foreground hover:bg-main hover:text-white shadow-shadow flex items-center justify-between gap-2 cursor-pointer"
+                >
+                  <div className="flex items-center gap-2">
+                    <Icon
+                      className="w-4 h-4 shrink-0"
+                      variant={action.iconVariant}
+                    />
+                    <span className="font-mono text-xs sm:text-sm font-bold">
+                      {action.label}
+                    </span>
+                  </div>
+                  <ArrowUpRight className="w-4 h-4 shrink-0" />
+                </motion.a>
+              );
+            })}
           </div>
         </div>
       </div>
 
-      {/* Achievements & milestones section */}
+      {/* Achievements & Milestones section */}
       <MilestonesSection />
 
       {/* Tech stack section */}

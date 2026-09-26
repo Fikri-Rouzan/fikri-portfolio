@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import { Space_Grotesk, Space_Mono } from "next/font/google";
 import { ThemeProvider } from "@/components/theme/theme-provider";
+import { SoundProvider } from "@/components/sound/sound-provider";
 import { Header } from "@/components/header";
-import { Footer } from "@/components/footer";
 import { Navbar } from "@/components/navbar";
+import { Footer } from "@/components/footer";
 import "./globals.css";
 
 const spaceGrotesk = Space_Grotesk({
@@ -39,6 +40,7 @@ export default function RootLayout({
     >
       <body className="min-h-dvh flex flex-col font-sans bg-background text-foreground relative">
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          <SoundProvider />
           <Header />
           <main className="flex-1 w-full max-w-6xl mx-auto px-4 sm:px-6 py-8">
             {children}

@@ -1,9 +1,9 @@
 "use client";
 
 import { motion } from "motion/react";
-import { Mail, ExternalLink } from "lucide-react";
 import { ContactForm } from "@/components/contact/contact-form";
 import { CONTACTS } from "@/data/contact";
+import { Mail, ExternalLink } from "lucide-react";
 
 export function ContactContent() {
   return (
@@ -52,10 +52,10 @@ export function ContactContent() {
                   rel={item.isExternal ? "noopener noreferrer" : undefined}
                   whileHover={{
                     x: -2,
-                    y: -4,
+                    y: -3,
                     transition: { duration: 0.15, ease: "easeOut" },
                   }}
-                  whileTap={{ scale: 0.98 }}
+                  whileTap={{ scale: 0.96 }}
                   className="p-4 sm:p-5 rounded-base border-2 border-border bg-secondary-background text-foreground shadow-shadow hover:shadow-shadow-lg hover:bg-main hover:text-white flex items-center justify-between group cursor-pointer"
                 >
                   <div className="flex items-center gap-3.5 overflow-hidden">

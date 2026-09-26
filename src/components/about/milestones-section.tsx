@@ -2,6 +2,7 @@
 
 import * as React from "react";
 import { motion, AnimatePresence } from "motion/react";
+import { EDUCATION_DATA, CERTIFICATION_DATA } from "@/data/about";
 import {
   GraduationCap,
   Award,
@@ -9,7 +10,6 @@ import {
   Building2,
   FileText,
 } from "lucide-react";
-import { EDUCATION_DATA, CERTIFICATION_DATA } from "@/data/about";
 
 export function MilestonesSection() {
   const [activeTab, setActiveTab] = React.useState<
