@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Space_Grotesk, Space_Mono } from "next/font/google";
 import { ThemeProvider } from "@/components/theme/theme-provider";
+import { ClickParticles } from "@/components/click-particles";
 import { SoundProvider } from "@/components/sound/sound-provider";
 import { Header } from "@/components/header";
 import { Navbar } from "@/components/navbar";
@@ -40,6 +41,7 @@ export default function RootLayout({
     >
       <body className="min-h-dvh flex flex-col font-sans bg-background text-foreground relative">
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          <ClickParticles />
           <SoundProvider />
           <Header />
           <main className="flex-1 w-full max-w-6xl mx-auto px-4 sm:px-6 py-8">

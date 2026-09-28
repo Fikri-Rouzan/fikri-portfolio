@@ -25,7 +25,8 @@ export const PROJECTS: Project[] = [
   {
     id: 1,
     title: "Patriot",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    description:
+      "A digital educational platform developed to showcase the historical struggle of Indonesian national heroes from the colonial era through the post-independence period.",
     category: "Web",
     year: "2023",
     image: "/assets/projects/web/patriot.png",
@@ -46,7 +47,8 @@ export const PROJECTS: Project[] = [
   {
     id: 3,
     title: "Learnix",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    description:
+      "A workshop discovery and event booking management platform featuring category browsing, participant registration, instructor tracking, and transaction management.",
     category: "Web",
     year: "2024",
     image: "/assets/projects/web/learnix.png",
@@ -56,7 +58,8 @@ export const PROJECTS: Project[] = [
   {
     id: 4,
     title: "My Office",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    description:
+      "An interactive web application designed for browsing, exploring, and booking flexible office spaces across multiple cities.",
     category: "Web",
     year: "2025",
     image: "/assets/projects/web/my-office.png",
@@ -66,7 +69,7 @@ export const PROJECTS: Project[] = [
   // {
   //   id: 5,
   //   title: "StayKos",
-  //   description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+  //   description: "A comprehensive boarding house booking and rental property management platform enabling seamless room discovery, location-based searches, and automated transaction handling.",
   //   category: "Web",
   //   year: "2025",
   //   image: "/assets/projects/web/staykos.png",
@@ -76,7 +79,8 @@ export const PROJECTS: Project[] = [
   {
     id: 6,
     title: "PowerAnalytics",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    description:
+      "A predictive machine learning model developed to estimate building energy consumption based on structural characteristics, occupant activity, and ambient temperature parameters.",
     category: "AI",
     year: "2025",
     image: "/assets/projects/ai/poweranalytics.png",
@@ -87,7 +91,8 @@ export const PROJECTS: Project[] = [
   {
     id: 7,
     title: "Al Mukhlisin",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    description:
+      "A web-based mosque management application built for Masjid Jami Al Mukhlisin to publish event information for congregants while managing committee, speaker, and resident records.",
     category: "Web",
     year: "2025",
     image: "/assets/projects/web/al-mukhlisin.png",
@@ -104,7 +109,8 @@ export const PROJECTS: Project[] = [
   {
     id: 8,
     title: "StuProf",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    description:
+      "A student profile management system featuring role-based dashboards for students and administrators, academic record tracking, and audit history logs.",
     category: "Web",
     year: "2025",
     image: "/assets/projects/web/stuprof.png",
@@ -131,7 +137,8 @@ export const PROJECTS: Project[] = [
   {
     id: 10,
     title: "Career Flow",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    description:
+      "A streamlined job portal and candidate tracking platform designed to simplify career opportunity management and recruitment workflows.",
     category: "Web",
     year: "2025",
     image: "/assets/projects/web/career-flow.png",
@@ -141,7 +148,8 @@ export const PROJECTS: Project[] = [
   {
     id: 11,
     title: "HydroCheck",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    description:
+      "A machine learning classification model developed to determine water potability based on physical and chemical quality parameters.",
     category: "AI",
     year: "2025",
     image: "/assets/projects/ai/hydrocheck.png",
@@ -152,7 +160,8 @@ export const PROJECTS: Project[] = [
   {
     id: 12,
     title: "Bike Sharing Analysis",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    description:
+      "A data analytics dashboard created to analyze temporal trends, weather impact, and usage patterns within urban bike-sharing systems.",
     category: "Data Science",
     year: "2026",
     image: "/assets/projects/data-science/bike-sharing.png",
@@ -163,7 +172,8 @@ export const PROJECTS: Project[] = [
   {
     id: 13,
     title: "Sharia Economic Justice Review",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    description:
+      "A custom user interface and frontend enhancement for the Sharia Economic Justice Review (SEJR) journal website, built on Open Journal Systems (OJS).",
     category: "Web",
     year: "2026",
     image: "/assets/projects/web/sejr.png",
@@ -173,7 +183,8 @@ export const PROJECTS: Project[] = [
   {
     id: 14,
     title: "BurnAway",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    description:
+      "An interactive analytics dashboard designed to map and analyze physical factors and work patterns triggering software developer burnout.",
     category: "Data Science",
     year: "2026",
     image: "/assets/projects/data-science/burnaway.png",
@@ -184,7 +195,8 @@ export const PROJECTS: Project[] = [
   {
     id: 15,
     title: "EduStress",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    description:
+      "A machine learning classification model built to assess student stress levels based on academic workload, health indicators, and emotional parameters.",
     category: "AI",
     year: "2026",
     image: "/assets/projects/ai/edustress.png",
@@ -213,7 +225,8 @@ export const PROJECTS: Project[] = [
   {
     id: 17,
     title: "Ricelytics",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    description:
+      "A computer vision application developed to evaluate rice quality from digital images utilizing the MobileNetV2 deep learning architecture.",
     category: "AI",
     year: "2026",
     image: "/assets/projects/ai/ricelytics.png",
@@ -230,7 +243,8 @@ export const PROJECTS: Project[] = [
   {
     id: 18,
     title: "StudioAI",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    description:
+      "An end-to-end generative AI and image analysis platform featuring deep learning pipelines, exploratory data analysis, and an interactive Streamlit dashboard.",
     category: "AI",
     year: "2026",
     image: "/assets/projects/ai/studioai.png",
@@ -247,7 +261,8 @@ export const PROJECTS: Project[] = [
   {
     id: 19,
     title: "Human Resources Analysis",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    description:
+      "A human resource analytics project built to analyze employee satisfaction, performance metrics, and retention patterns across organizational teams.",
     category: "Data Science",
     year: "2026",
     image: "/assets/projects/data-science/hr.png",
@@ -259,7 +274,8 @@ export const PROJECTS: Project[] = [
   {
     id: 20,
     title: "Ricelytics MultiNet",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    description:
+      "A computer vision system designed to evaluate and classify rice quality by benchmarking Convolutional Neural Network (CNN) architectures, including MobileNetV2, ResNet50, and EfficientNetB0.",
     category: "AI",
     year: "2026",
     image: "/assets/projects/ai/ricelytics-multinet.png",
@@ -272,21 +288,23 @@ export const PROJECTS: Project[] = [
     ],
     liveUrl: "https://ricelytics-multinet.streamlit.app",
   },
-  // {
-  //   id: 21,
-  //   title: "Fikri Portfolio",
-  //   description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-  //   category: "Web",
-  //   year: "2026",
-  //   image: "/assets/projects/web/fikri-portfolio.png",
-  //   techStack: ["TypeScript", "Next.js", "Tailwind CSS", "React"],
-  //   githubUrl: "https://github.com/Fikri-Rouzan/fikri-portfolio",
-  //   liveUrl: "https://fikri-portfolio-web.vercel.app",
-  // },
+  {
+    id: 21,
+    title: "Fikri Portfolio",
+    description:
+      "A personal portfolio website built to showcase my technical projects, professional experience, achievements, and certifications.",
+    category: "Web",
+    year: "2026",
+    image: "/assets/projects/web/fikri-portfolio.png",
+    techStack: ["TypeScript", "Next.js", "Tailwind CSS", "React"],
+    githubUrl: "https://github.com/Fikri-Rouzan/fikri-portfolio",
+    liveUrl: "https://fikri-portfolio-web.vercel.app",
+  },
   {
     id: 22,
     title: "EduPulse Analytics",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    description:
+      "A machine learning and data analytics project developed to predict student dropout risk and academic success using socio-demographic factors and early-semester performance metrics.",
     category: "Data Science",
     year: "2026",
     image: "/assets/projects/ai/edupulse-analytics.png",
