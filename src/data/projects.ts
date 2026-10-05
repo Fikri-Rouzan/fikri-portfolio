@@ -126,16 +126,17 @@ export const PROJECTS: Project[] = [
     ],
     githubUrl: "https://github.com/Fikri-Rouzan/stuprof",
   },
-  // {
-  //   id: 9,
-  //   title: "My Management",
-  //   description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-  //   category: "Mobile",
-  //   year: "2025",
-  //   image: "/assets/projects/mobile/my-management.png",
-  //   techStack: ["Dart", "PHP", "Flutter", "MySQL"],
-  //   githubUrl: "https://github.com/Fikri-Rouzan/my_management",
-  // },
+  {
+    id: 9,
+    title: "My Management",
+    description:
+      "A personal productivity platform built to streamline daily scheduling, emotional wellness tracking, structured problem-solving, and AI-assisted task management.",
+    category: "Mobile",
+    year: "2025",
+    image: "/assets/projects/mobile/my-management.png",
+    techStack: ["Dart", "PHP", "Flutter", "MySQL", "Google Gemini"],
+    githubUrl: "https://github.com/Fikri-Rouzan/my_management",
+  },
   {
     id: 10,
     title: "Career Flow",
