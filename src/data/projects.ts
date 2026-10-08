@@ -80,6 +80,17 @@ export const PROJECTS: Project[] = [
   },
   {
     id: 6,
+    title: "My Portfolio",
+    description:
+      "A modern personal portfolio website built to showcase my professional background, featured projects, tech stack, and contact details.",
+    category: "Web",
+    year: "2025",
+    image: "/assets/projects/web/my-portfolio.png",
+    techStack: ["JavaScript", "Next.js", "Tailwind CSS", "React"],
+    liveUrl: "https://fikri-portfolio-website.vercel.app",
+  },
+  {
+    id: 7,
     title: "PowerAnalytics",
     description:
       "A predictive machine learning model developed to estimate building energy consumption based on structural characteristics, occupant activity, and ambient temperature parameters.",
@@ -91,7 +102,7 @@ export const PROJECTS: Project[] = [
     liveUrl: "https://poweranalytics.streamlit.app",
   },
   {
-    id: 7,
+    id: 8,
     title: "Al Mukhlisin",
     description:
       "A web-based mosque management application built for Masjid Jami Al Mukhlisin to publish event information for congregants while managing committee, speaker, and resident records.",
@@ -109,7 +120,7 @@ export const PROJECTS: Project[] = [
     liveUrl: "https://al-mukhlisin.netlify.app",
   },
   {
-    id: 8,
+    id: 9,
     title: "StuProf",
     description:
       "A student profile management system featuring role-based dashboards for students and administrators, academic record tracking, and audit history logs.",
@@ -127,7 +138,7 @@ export const PROJECTS: Project[] = [
     githubUrl: "https://github.com/Fikri-Rouzan/stuprof",
   },
   {
-    id: 9,
+    id: 10,
     title: "My Management",
     description:
       "A personal productivity platform built to streamline daily scheduling, emotional wellness tracking, structured problem-solving, and AI-assisted task management.",
@@ -138,7 +149,7 @@ export const PROJECTS: Project[] = [
     githubUrl: "https://github.com/Fikri-Rouzan/my_management",
   },
   {
-    id: 10,
+    id: 11,
     title: "Career Flow",
     description:
       "A streamlined job portal and candidate tracking platform designed to simplify career opportunity management and recruitment workflows.",
@@ -149,7 +160,7 @@ export const PROJECTS: Project[] = [
     githubUrl: "https://github.com/Fikri-Rouzan/career-flow",
   },
   {
-    id: 11,
+    id: 12,
     title: "HydroCheck",
     description:
       "A machine learning classification model developed to determine water potability based on physical and chemical quality parameters.",
@@ -161,7 +172,7 @@ export const PROJECTS: Project[] = [
     liveUrl: "https://hydrocheck.streamlit.app",
   },
   {
-    id: 12,
+    id: 13,
     title: "Bike Sharing Analysis",
     description:
       "A data analytics dashboard created to analyze temporal trends, weather impact, and usage patterns within urban bike-sharing systems.",
@@ -173,7 +184,7 @@ export const PROJECTS: Project[] = [
     liveUrl: "https://bike-sharing-analysis-web.streamlit.app",
   },
   {
-    id: 13,
+    id: 14,
     title: "Sharia Economic Justice Review",
     description:
       "A custom user interface and frontend enhancement for the Sharia Economic Justice Review (SEJR) journal website, built on Open Journal Systems (OJS).",
@@ -184,7 +195,7 @@ export const PROJECTS: Project[] = [
     liveUrl: "https://ejournalhub.org/index.php/sejr",
   },
   {
-    id: 14,
+    id: 15,
     title: "BurnAway",
     description:
       "An interactive analytics dashboard designed to map and analyze physical factors and work patterns triggering software developer burnout.",
@@ -196,7 +207,7 @@ export const PROJECTS: Project[] = [
     liveUrl: "https://burnaway.streamlit.app",
   },
   {
-    id: 15,
+    id: 16,
     title: "EduStress",
     description:
       "A machine learning classification model built to assess student stress levels based on academic workload, health indicators, and emotional parameters.",
@@ -208,7 +219,7 @@ export const PROJECTS: Project[] = [
     liveUrl: "https://edustress.streamlit.app",
   },
   {
-    id: 16,
+    id: 17,
     title: "AstroForge",
     description:
       "A Web3 GameFi platform featuring space-themed idle resource mining and fleet management, enabling players to deploy starships, farm minerals, and refine tokenized digital assets.",
@@ -227,7 +238,7 @@ export const PROJECTS: Project[] = [
     githubUrl: "https://github.com/Fikri-Rouzan/astroforge",
   },
   {
-    id: 17,
+    id: 18,
     title: "Ricelytics",
     description:
       "A computer vision application developed to evaluate rice quality from digital images utilizing the MobileNetV2 deep learning architecture.",
@@ -245,7 +256,7 @@ export const PROJECTS: Project[] = [
     liveUrl: "https://ricelytics.streamlit.app",
   },
   {
-    id: 18,
+    id: 19,
     title: "StudioAI",
     description:
       "An end-to-end generative AI and image analysis platform featuring deep learning pipelines, exploratory data analysis, and an interactive Streamlit dashboard.",
@@ -263,7 +274,7 @@ export const PROJECTS: Project[] = [
     githubUrl: "https://github.com/Fikri-Rouzan/studioai",
   },
   {
-    id: 19,
+    id: 20,
     title: "Human Resources Analysis",
     description:
       "A human resource analytics project built to analyze employee satisfaction, performance metrics, and retention patterns across organizational teams.",
@@ -276,7 +287,7 @@ export const PROJECTS: Project[] = [
       "https://datastudio.google.com/u/0/reporting/516a86d1-dadf-4d39-8ae2-fe69833d44e9/page/MQL5F",
   },
   {
-    id: 20,
+    id: 21,
     title: "Ricelytics MultiNet",
     description:
       "A computer vision system designed to evaluate and classify rice quality by benchmarking Convolutional Neural Network (CNN) architectures, including MobileNetV2, ResNet50, and EfficientNetB0.",
@@ -293,7 +304,7 @@ export const PROJECTS: Project[] = [
     liveUrl: "https://ricelytics-multinet.streamlit.app",
   },
   {
-    id: 21,
+    id: 22,
     title: "Fikri Portfolio",
     description:
       "A personal portfolio website built to showcase my technical projects, professional experience, achievements, and certifications.",
@@ -305,7 +316,7 @@ export const PROJECTS: Project[] = [
     liveUrl: "https://fikri-rouzan.is-a.dev",
   },
   {
-    id: 22,
+    id: 23,
     title: "EduPulse Analytics",
     description:
       "A machine learning and data analytics project developed to predict student dropout risk and academic success using socio-demographic factors and early-semester performance metrics.",
