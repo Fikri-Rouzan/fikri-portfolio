@@ -3,7 +3,7 @@
 import * as React from "react";
 import { motion } from "motion/react";
 
-const ROLES = ["Data Scientist", "Fullstack Web Developer"];
+const ROLES = ["Data Scientist", "Full-Stack Web Developer"];
 
 export function TypingRoles() {
   const [text, setText] = React.useState("");
