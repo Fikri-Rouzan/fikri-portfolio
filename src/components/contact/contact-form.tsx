@@ -74,28 +74,29 @@ function FormFields() {
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className="p-6 sm:p-8 rounded-base border-2 border-border bg-secondary-background shadow-shadow flex flex-col gap-5"
+      noValidate
+      className="p-4 sm:p-6 lg:p-8 rounded-base border-2 border-border bg-secondary-background shadow-shadow flex flex-col gap-4 sm:gap-5"
     >
       {/* Status message */}
-      {status.type && (
-        <div
-          className={`p-3.5 rounded-base border-2 border-border font-mono text-xs sm:text-sm flex items-center gap-2.5 shadow-shadow-sm ${
-            status.type === "success"
-              ? "bg-[#a6e3a1] text-black"
-              : "bg-[#e78284] text-white"
-          }`}
-        >
-          {status.type === "success" ? (
-            <CheckCircle2 className="w-4 h-4 shrink-0" />
-          ) : (
-            <AlertCircle className="w-4 h-4 shrink-0" />
-          )}
-          <span>{status.message}</span>
-        </div>
-      )}
+      <div role="status" aria-live="polite" className="empty:hidden">
+        {status.type && (
+          <div
+            className={`p-3 sm:p-3.5 rounded-base border-2 border-border font-mono text-xs sm:text-sm flex items-center gap-2.5 shadow-shadow-sm text-black ${
+              status.type === "success" ? "bg-[#a6e3a1]" : "bg-[#f4a3a5]"
+            }`}
+          >
+            {status.type === "success" ? (
+              <CheckCircle2 className="w-4 h-4 shrink-0" aria-hidden="true" />
+            ) : (
+              <AlertCircle className="w-4 h-4 shrink-0" aria-hidden="true" />
+            )}
+            <span>{status.message}</span>
+          </div>
+        )}
+      </div>
 
       {/* Input fields */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
         {FORM_FIELDS.map((field) => {
           const fieldError = errors[field.name];
 
@@ -108,7 +109,7 @@ function FormFields() {
             >
               <label
                 htmlFor={`contact-${field.name}`}
-                className="font-mono text-xs uppercase tracking-wider text-foreground"
+                className="font-mono text-xs sm:text-sm uppercase tracking-wider text-foreground"
               >
                 {field.label}
               </label>
@@ -121,7 +122,11 @@ function FormFields() {
                   autoComplete={field.autoComplete}
                   placeholder={field.placeholder}
                   disabled={isSubmitting}
-                  className="w-full px-3.5 py-2.5 rounded-base border-2 border-border bg-background text-foreground text-sm font-sans placeholder:text-foreground/40 focus:outline-none focus:shadow-shadow-sm transition-shadow resize-none"
+                  aria-invalid={fieldError ? true : undefined}
+                  aria-describedby={
+                    fieldError ? `contact-${field.name}-error` : undefined
+                  }
+                  className="w-full px-3.5 py-2.5 rounded-base border-2 border-border bg-background text-foreground text-base sm:text-sm font-sans placeholder:text-foreground/40 focus-visible:shadow-shadow-sm transition-shadow resize-none disabled:opacity-60"
                 />
               ) : (
                 <input
@@ -129,14 +134,22 @@ function FormFields() {
                   id={`contact-${field.name}`}
                   type={field.type}
                   autoComplete={field.autoComplete}
+                  spellCheck={field.type === "email" ? false : undefined}
                   placeholder={field.placeholder}
                   disabled={isSubmitting}
-                  className="w-full px-3.5 py-2.5 rounded-base border-2 border-border bg-background text-foreground text-sm font-sans placeholder:text-foreground/40 focus:outline-none focus:shadow-shadow-sm transition-shadow"
+                  aria-invalid={fieldError ? true : undefined}
+                  aria-describedby={
+                    fieldError ? `contact-${field.name}-error` : undefined
+                  }
+                  className="w-full px-3.5 py-3 sm:py-2.5 rounded-base border-2 border-border bg-background text-foreground text-base sm:text-sm font-sans placeholder:text-foreground/40 focus-visible:shadow-shadow-sm transition-shadow disabled:opacity-60"
                 />
               )}
 
               {fieldError && (
-                <span className="font-mono text-[11px] text-red-500 font-bold">
+                <span
+                  id={`contact-${field.name}-error`}
+                  className="font-mono text-xs text-red-600 dark:text-red-400 font-bold"
+                >
                   {fieldError.message}
                 </span>
               )}
@@ -164,17 +177,42 @@ function FormFields() {
         >
           {isSubmitting ? (
             <>
-              <Loader2 className="w-4 h-4 animate-spin" />
-              <span>Sending...</span>
+              <Loader2
+                className="w-4 h-4 motion-safe:animate-spin"
+                aria-hidden="true"
+              />
+              <span>Sending…</span>
             </>
           ) : (
             <>
-              <Send className="w-4 h-4" />
+              <Send className="w-4 h-4" aria-hidden="true" />
               <span>Send Message</span>
             </>
           )}
         </motion.button>
       </div>
+
+      <p className="font-sans text-xs text-foreground/70 text-pretty">
+        This site is protected by reCAPTCHA. The Google{" "}
+        <a
+          href="https://policies.google.com/privacy"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="underline hover:text-main"
+        >
+          Privacy Policy
+        </a>{" "}
+        and{" "}
+        <a
+          href="https://policies.google.com/terms"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="underline hover:text-main"
+        >
+          Terms of Service
+        </a>{" "}
+        apply.
+      </p>
     </form>
   );
 }

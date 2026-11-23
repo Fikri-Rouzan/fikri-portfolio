@@ -1,10 +1,11 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Space_Grotesk, Space_Mono } from "next/font/google";
 import { ThemeProvider } from "@/components/theme/theme-provider";
+import { MotionProvider } from "@/components/motion/motion-provider";
 import { ClickParticles } from "@/components/click-particles";
 import { SoundProvider } from "@/components/sound/sound-provider";
 import { Header } from "@/components/header";
-import { Navbar } from "@/components/navbar";
+import { Navbar } from "@/components/navbar/navbar";
 import { Footer } from "@/components/footer";
 import "./globals.css";
 
@@ -18,6 +19,14 @@ const spaceMono = Space_Mono({
   weight: ["400", "700"],
   subsets: ["latin"],
 });
+
+export const viewport: Viewport = {
+  colorScheme: "light dark",
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#dcebfe" },
+    { media: "(prefers-color-scheme: dark)", color: "#20294b" },
+  ],
+};
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://fikri-rouzan.is-a.dev"),
@@ -105,14 +114,26 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          <ClickParticles />
-          <SoundProvider />
-          <Header />
-          <main className="flex-1 w-full max-w-6xl mx-auto px-4 sm:px-6 py-8">
-            {children}
-          </main>
-          <Navbar />
-          <Footer />
+          <MotionProvider>
+            <a
+              href="#main-content"
+              className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-200 focus:px-4 focus:py-2 focus:rounded-base focus:border-2 focus:border-border focus:bg-main focus:text-white focus:font-mono focus:text-sm focus:font-bold focus:shadow-shadow"
+            >
+              Skip to Main Content
+            </a>
+            <ClickParticles />
+            <SoundProvider />
+            <Header />
+            <main
+              id="main-content"
+              tabIndex={-1}
+              className="flex-1 w-full max-w-6xl mx-auto px-4 sm:px-6 py-6 sm:py-8 focus:outline-none"
+            >
+              {children}
+            </main>
+            <Navbar />
+            <Footer />
+          </MotionProvider>
         </ThemeProvider>
       </body>
     </html>

@@ -21,26 +21,32 @@ function MarqueeRow({
           "linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%)",
       }}
     >
-      <div
-        className={`flex min-w-full shrink-0 gap-3 items-center ${
+      <ul
+        className={`flex min-w-full shrink-0 gap-2.5 sm:gap-3 items-center group-hover-pause ${
           direction === "left" ? "animate-marquee" : "animate-marquee-reverse"
-        } group-hover:paused`}
+        }`}
       >
         {duplicatedItems.map((item, idx) => {
           const Icon = item.icon;
           return (
-            <div
+            <li
               key={`${item.name}-${idx}`}
-              className="flex items-center gap-2 px-3.5 py-2 rounded-base border-2 border-border bg-secondary-background text-foreground shadow-shadow-sm shrink-0"
+              aria-hidden={idx >= items.length ? true : undefined}
+              translate="no"
+              className="flex items-center gap-2 px-3 sm:px-3.5 py-1.5 sm:py-2 rounded-base border-2 border-border bg-secondary-background text-foreground shadow-shadow-sm shrink-0"
             >
-              <Icon className="w-4 h-4 shrink-0" variant={item.variant} />
+              <Icon
+                className="w-3.5 h-3.5 sm:w-4 sm:h-4 shrink-0"
+                variant={item.variant}
+                aria-hidden="true"
+              />
               <span className="font-mono text-xs sm:text-sm font-bold whitespace-nowrap">
                 {item.name}
               </span>
-            </div>
+            </li>
           );
         })}
-      </div>
+      </ul>
     </div>
   );
 }
@@ -52,9 +58,9 @@ export function TechMarquee() {
         <div className="absolute inset-0 flex items-center">
           <div className="w-full border-t-2 border-border" />
         </div>
-        <div className="relative px-4 bg-background font-mono text-xs sm:text-sm font-bold text-foreground/80 tracking-wider uppercase">
+        <h2 className="relative px-4 bg-background font-mono text-xs sm:text-sm font-bold text-foreground/80 tracking-wider uppercase">
           Tech Stack
-        </div>
+        </h2>
       </div>
 
       <MarqueeRow items={MARQUEE_ROW_1} direction="left" />

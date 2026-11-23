@@ -15,6 +15,7 @@ export function ThemeToggle() {
   return (
     <div className="relative group">
       <motion.button
+        type="button"
         onClick={handleToggle}
         aria-label="Toggle Theme"
         whileHover={{
@@ -23,14 +24,17 @@ export function ThemeToggle() {
           transition: { duration: 0.15, ease: "easeOut" },
         }}
         whileTap={{ scale: 0.96 }}
-        className="w-9 h-9 rounded-base border-2 border-border bg-background text-foreground shadow-shadow-sm hover:shadow-shadow hover:bg-main hover:text-white flex items-center justify-center cursor-pointer"
+        className="size-9 rounded-base border-2 border-border bg-background text-foreground shadow-shadow-sm hover:shadow-shadow hover:bg-main hover:text-white flex items-center justify-center cursor-pointer"
       >
-        <Sun className="w-4 h-4 block dark:hidden" />
-        <Moon className="w-4 h-4 hidden dark:block" />
+        <Sun className="w-4 h-4 block dark:hidden" aria-hidden="true" />
+        <Moon className="w-4 h-4 hidden dark:block" aria-hidden="true" />
       </motion.button>
 
       {/* Tooltip */}
-      <span className="absolute -bottom-7 right-0 sm:left-1/2 sm:-translate-x-1/2 sm:right-auto px-2 py-0.5 bg-neutral-900 text-white text-[10px] font-mono rounded border border-border opacity-0 pointer-events-none group-hover:opacity-100 transition-opacity z-10 shadow-shadow-sm whitespace-nowrap">
+      <span
+        aria-hidden="true"
+        className="hidden sm:block absolute -bottom-8 left-1/2 -translate-x-1/2 px-2 py-0.5 bg-neutral-900 text-white text-[11px] font-mono rounded border border-border opacity-0 pointer-events-none group-hover:opacity-100 group-focus-within:opacity-100 transition-opacity z-10 shadow-shadow-sm whitespace-nowrap"
+      >
         <span className="block dark:hidden">Dark Mode</span>
         <span className="hidden dark:block">Light Mode</span>
       </span>

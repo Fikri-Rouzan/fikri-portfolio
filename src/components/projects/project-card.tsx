@@ -40,14 +40,14 @@ export const ProjectCard = React.forwardRef<HTMLDivElement, ProjectCardProps>(
             className="object-cover"
           />
           {/* Year badge */}
-          <div className="absolute top-3 right-3 px-2.5 py-1 rounded-base border-2 border-border bg-main text-white font-mono text-xs font-bold shadow-shadow-sm">
+          <div className="absolute top-2.5 right-2.5 sm:top-3 sm:right-3 px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-base border-2 border-border bg-main text-white font-mono text-[11px] sm:text-xs font-bold shadow-shadow-sm tabular-nums">
             {project.year}
           </div>
         </div>
 
         {/* Action bar */}
-        <div className="px-5 pt-4 pb-2 flex items-center justify-between gap-2 border-b border-border/40">
-          <span className="px-2.5 py-1 rounded-base border-2 border-border bg-background text-foreground font-mono text-[11px] tracking-wider uppercase shadow-shadow-sm">
+        <div className="px-4 sm:px-5 pt-3 sm:pt-4 pb-2 flex items-center justify-between gap-2 border-b border-border/40">
+          <span className="px-2.5 py-1 rounded-base border-2 border-border bg-background text-foreground font-mono text-[11px] sm:text-xs tracking-wider uppercase shadow-shadow-sm">
             {project.category}
           </span>
 
@@ -66,7 +66,11 @@ export const ProjectCard = React.forwardRef<HTMLDivElement, ProjectCardProps>(
                 whileTap={{ scale: 0.95 }}
                 className="p-2 rounded-base border-2 border-border bg-background text-foreground hover:bg-main hover:text-white shadow-shadow-sm hover:shadow-shadow-md flex items-center justify-center cursor-pointer"
               >
-                <Github variant="mono" className="w-3.5 h-3.5" />
+                <Github
+                  variant="mono"
+                  className="w-3.5 h-3.5"
+                  aria-hidden="true"
+                />
               </motion.a>
             )}
             {project.liveUrl && (
@@ -83,34 +87,34 @@ export const ProjectCard = React.forwardRef<HTMLDivElement, ProjectCardProps>(
                 whileTap={{ scale: 0.95 }}
                 className="p-2 rounded-base border-2 border-border bg-background text-foreground hover:bg-main hover:text-white shadow-shadow-sm hover:shadow-shadow-md flex items-center justify-center cursor-pointer"
               >
-                <ExternalLink className="w-3.5 h-3.5" />
+                <ExternalLink className="w-3.5 h-3.5" aria-hidden="true" />
               </motion.a>
             )}
           </div>
         </div>
 
         {/* Content body */}
-        <div className="p-5 flex-1 flex flex-col justify-between gap-4">
-          <div className="flex flex-col gap-2">
-            <h3 className="font-heading font-bold text-lg sm:text-xl text-foreground">
+        <div className="p-4 sm:p-5 flex-1 flex flex-col justify-between gap-4">
+          <div className="flex min-w-0 flex-col gap-2">
+            <h3 className="font-heading font-bold text-base sm:text-xl text-foreground text-balance wrap-break-word">
               {project.title}
             </h3>
-            <p className="font-sans text-xs sm:text-sm text-foreground/80 leading-relaxed line-clamp-5">
+            <p className="font-sans text-sm text-foreground/80 leading-relaxed line-clamp-5 text-pretty">
               {project.description}
             </p>
           </div>
 
           {/* Tech stack pills */}
-          <div className="flex flex-wrap gap-1.5 pt-2">
+          <ul className="flex flex-wrap gap-1.5 pt-2">
             {project.techStack.map((tech) => (
-              <span
+              <li
                 key={tech}
-                className="px-2 py-0.5 rounded border border-border bg-background text-foreground font-mono text-[10px] shadow-shadow-xs"
+                className="px-2 py-0.5 rounded border border-border bg-background text-foreground font-mono text-[11px] sm:text-xs shadow-shadow-xs"
               >
                 {tech}
-              </span>
+              </li>
             ))}
-          </div>
+          </ul>
         </div>
       </motion.div>
     );

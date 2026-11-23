@@ -9,50 +9,55 @@ export function TechStackSection() {
         <div className="absolute inset-0 flex items-center">
           <div className="w-full border-t-2 border-border" />
         </div>
-        <div className="relative px-4 bg-background font-mono text-xs sm:text-sm font-bold text-foreground/80 tracking-wider uppercase">
+        <h2 className="relative px-4 bg-background font-mono text-xs sm:text-sm font-bold text-foreground/80 tracking-wider uppercase">
           Tech Stack
-        </div>
+        </h2>
       </div>
 
       {/* Tech stack grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
         {TECH_CATEGORIES.map((cat) => {
           const CategoryIcon = cat.icon;
 
           return (
             <div
               key={cat.category}
-              className="p-5 sm:p-6 rounded-base border-2 border-border bg-secondary-background text-foreground shadow-shadow flex flex-col gap-4"
+              className="p-4 sm:p-6 rounded-base border-2 border-border bg-secondary-background text-foreground shadow-shadow flex flex-col gap-3 sm:gap-4"
             >
               <h3 className="font-heading font-bold text-base sm:text-lg text-foreground flex items-center gap-2 border-b border-border/40 pb-2">
                 {CategoryIcon && (
-                  <CategoryIcon className="w-4.5 h-4.5 text-main shrink-0" />
+                  <CategoryIcon
+                    className="w-4.5 h-4.5 text-main shrink-0"
+                    aria-hidden="true"
+                  />
                 )}
                 <span>{cat.category}</span>
               </h3>
 
               {/* Tech stack pills */}
-              <div className="flex flex-wrap gap-2 pt-1">
+              <ul className="flex flex-wrap gap-2 pt-1">
                 {cat.skills.map((skill) => {
                   const Icon = skill.icon;
                   return (
-                    <div
+                    <li
                       key={skill.name}
-                      className="flex items-center gap-2 px-3 py-1.5 rounded-base border-2 border-border bg-background text-foreground shadow-shadow-sm shrink-0"
+                      translate="no"
+                      className="flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3 py-1.5 rounded-base border-2 border-border bg-background text-foreground shadow-shadow-sm shrink-0"
                     >
                       {Icon && (
                         <Icon
-                          className="w-4 h-4 shrink-0"
+                          className="w-3.5 h-3.5 sm:w-4 sm:h-4 shrink-0"
                           variant={skill.variant}
+                          aria-hidden="true"
                         />
                       )}
-                      <span className="font-mono text-xs font-bold whitespace-nowrap">
+                      <span className="font-mono text-xs sm:text-sm font-bold whitespace-nowrap">
                         {skill.name}
                       </span>
-                    </div>
+                    </li>
                   );
                 })}
-              </div>
+              </ul>
             </div>
           );
         })}

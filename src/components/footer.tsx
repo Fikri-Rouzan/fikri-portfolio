@@ -20,7 +20,10 @@ export function Footer() {
     <footer className="w-full border-t-2 border-border bg-secondary-background mt-auto pt-7 sm:pt-9 pb-28 sm:pb-32">
       <div className="w-full px-4 sm:px-8 md:px-12 flex flex-col md:grid md:grid-cols-3 items-center gap-6">
         {/* Copyright */}
-        <div className="text-xs sm:text-sm font-mono text-foreground text-center md:text-left md:justify-self-start order-1">
+        <div
+          translate="no"
+          className="text-xs sm:text-sm font-mono text-foreground text-center md:text-left md:justify-self-start order-1"
+        >
           © {currentYear ? `${currentYear} ` : ""}Muhammad Fikri Rouzan Ash
           Shidik
         </div>
@@ -46,12 +49,16 @@ export function Footer() {
                 >
                   <Icon
                     className="w-4 h-4"
+                    aria-hidden="true"
                     {...(item.variant ? { variant: item.variant } : {})}
                   />
                 </MotionLink>
 
                 {/* Tooltip */}
-                <span className="absolute -top-8 left-1/2 -translate-x-1/2 px-2 py-0.5 bg-neutral-900 text-white text-[10px] font-mono rounded border border-border opacity-0 pointer-events-none group-hover:opacity-100 transition-opacity z-10 shadow-shadow-sm whitespace-nowrap">
+                <span
+                  aria-hidden="true"
+                  className="hidden sm:block absolute -top-8 left-1/2 -translate-x-1/2 px-2 py-0.5 bg-neutral-900 text-white text-[11px] font-mono rounded border border-border opacity-0 pointer-events-none group-hover:opacity-100 group-focus-within:opacity-100 transition-opacity z-10 shadow-shadow-sm whitespace-nowrap"
+                >
                   {item.name}
                 </span>
               </div>
@@ -61,8 +68,8 @@ export function Footer() {
 
         {/* Open to work badge */}
         <div className="flex items-center gap-2 px-3 py-1 rounded-full border-2 border-border bg-background shadow-shadow-sm font-mono text-xs text-foreground md:justify-self-end order-3">
-          <span className="relative flex h-2 w-2">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+          <span className="relative flex h-2 w-2" aria-hidden="true">
+            <span className="motion-safe:animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
             <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
           </span>
           <span className="uppercase">Open to Work</span>

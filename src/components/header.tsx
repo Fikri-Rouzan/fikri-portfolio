@@ -4,11 +4,13 @@ import { ThemeToggle } from "./theme/theme-toggle";
 export function Header() {
   return (
     <header className="sticky top-0 z-50 w-full border-b-2 border-border bg-secondary-background/90 backdrop-blur-md">
-      <div className="w-full px-4 sm:px-8 md:px-12 h-16 flex md:grid md:grid-cols-3 items-center justify-between">
+      <div className="w-full px-4 sm:px-8 md:px-12 h-14 sm:h-16 flex md:grid md:grid-cols-3 items-center justify-between">
         {/* Logo */}
         <div className="md:justify-self-start">
           <Link
             href="/"
+            translate="no"
+            aria-label="MFRAS, Home"
             className="font-heading font-bold text-lg sm:text-xl tracking-tight text-foreground hover:opacity-80 transition-opacity"
           >
             MFRAS
@@ -17,8 +19,8 @@ export function Header() {
 
         {/* Open to work badge */}
         <div className="hidden md:flex items-center gap-2 px-3 py-1 rounded-full border-2 border-border bg-background shadow-shadow-sm font-mono text-xs text-foreground md:justify-self-center">
-          <span className="relative flex h-2 w-2">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+          <span className="relative flex h-2 w-2" aria-hidden="true">
+            <span className="motion-safe:animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
             <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
           </span>
           <span className="uppercase">Open to Work</span>
@@ -27,9 +29,12 @@ export function Header() {
         {/* Theme toggle */}
         <div className="flex items-center gap-3 md:justify-self-end">
           {/* Badge for mobile */}
-          <div className="flex md:hidden items-center gap-1.5 px-2.5 py-1 rounded-full border-2 border-border bg-background shadow-shadow-sm text-[10px] font-mono">
-            <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
-            <span className="uppercase">Open</span>
+          <div className="flex md:hidden items-center gap-1.5 px-2.5 py-1 rounded-full border-2 border-border bg-background shadow-shadow-sm text-[11px] font-mono">
+            <span
+              className="h-1.5 w-1.5 rounded-full bg-emerald-500"
+              aria-hidden="true"
+            />
+            <span className="uppercase">Open to Work</span>
           </div>
           <ThemeToggle />
         </div>

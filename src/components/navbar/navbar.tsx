@@ -1,5 +1,5 @@
 import { Suspense } from "react";
-import { NavbarContent } from "@/components/navbar/navbar-content";
+import { NavbarContent } from "./navbar-content";
 
 export function Navbar() {
   return (

@@ -35,7 +35,10 @@ export function ClickParticles() {
     // Colors for the particles
     const colors = ["#8aadf4", "#ed8796", "#eed49f", "#a6da95", "#c6a0f6"];
 
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+
     const handleClick = (e: MouseEvent) => {
+      if (reducedMotion.matches) return;
       const count = 12;
 
       for (let i = 0; i < count; i++) {
@@ -100,6 +103,7 @@ export function ClickParticles() {
   return (
     <canvas
       ref={canvasRef}
+      aria-hidden="true"
       className="pointer-events-none fixed inset-0 z-100"
     />
   );

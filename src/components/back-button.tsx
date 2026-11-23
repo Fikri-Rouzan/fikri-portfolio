@@ -25,10 +25,11 @@ export function BackButton() {
     <button
       type="button"
       onClick={handleBack}
-      className="p-1.5 sm:p-2 rounded-base border-2 border-border bg-background text-foreground hover:bg-main hover:text-white shadow-shadow-sm transition-colors flex items-center justify-center shrink-0 cursor-pointer"
-      title="Go back"
+      aria-label="Go Back"
+      title="Go Back"
+      className="size-8 sm:size-9 rounded-base border-2 border-border bg-background text-foreground hover:bg-main hover:text-white shadow-shadow-sm transition-colors flex items-center justify-center shrink-0 cursor-pointer"
     >
-      <ArrowLeft className="w-4 h-4" />
+      <ArrowLeft className="w-4 h-4" aria-hidden="true" />
     </button>
   );
 }

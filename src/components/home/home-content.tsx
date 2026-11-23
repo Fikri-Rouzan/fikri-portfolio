@@ -17,13 +17,13 @@ export function HomeContent() {
     >
       {/* Hero section */}
       <div className="flex flex-col items-start gap-4 max-w-3xl">
-        <h1 className="text-3xl sm:text-5xl font-heading font-bold tracking-tight text-foreground leading-tight">
+        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold tracking-tight text-foreground leading-tight text-balance">
           Hi, I&apos;m Muhammad Fikri Rouzan Ash Shidik.
         </h1>
 
         <TypingRoles />
 
-        <p className="font-sans text-sm sm:text-base text-foreground/80 leading-relaxed max-w-2xl">
+        <p className="font-sans text-sm sm:text-base lg:text-lg text-foreground/80 leading-relaxed max-w-2xl text-pretty">
           Final-year Informatics Engineering student at Syarif Hidayatullah
           State Islamic University Jakarta with hands-on experience in data
           science and full-stack web development. Proficient in Python, SQL,
@@ -32,7 +32,7 @@ export function HomeContent() {
         </p>
 
         {/* CTA buttons */}
-        <div className="flex flex-wrap items-center gap-3.5 pt-2">
+        <div className="flex flex-wrap items-center gap-3 sm:gap-3.5 pt-2">
           {HOME_CTA_BUTTONS.map((cta) => {
             const Icon = cta.icon;
             const isPrimary = cta.variant === "primary";
@@ -51,18 +51,24 @@ export function HomeContent() {
                   href={cta.href}
                   target={cta.isExternal ? "_blank" : undefined}
                   rel={cta.isExternal ? "noopener noreferrer" : undefined}
-                  className={`px-5 py-3 rounded-base border-2 border-border font-mono text-xs sm:text-sm font-bold shadow-shadow hover:shadow-shadow-lg flex items-center gap-2 cursor-pointer ${
+                  className={`px-4 sm:px-5 py-2.5 sm:py-3 rounded-base border-2 border-border font-mono text-xs sm:text-sm font-bold shadow-shadow hover:shadow-shadow-lg flex items-center gap-2 cursor-pointer ${
                     isPrimary
                       ? "bg-main text-white"
                       : "bg-secondary-background text-foreground hover:bg-main hover:text-white"
                   }`}
                 >
                   {cta.iconPosition === "left" && (
-                    <Icon className="w-4 h-4 shrink-0" />
+                    <Icon
+                      className="w-3.5 h-3.5 sm:w-4 sm:h-4 shrink-0"
+                      aria-hidden="true"
+                    />
                   )}
                   <span>{cta.label}</span>
                   {cta.iconPosition === "right" && (
-                    <Icon className="w-4 h-4 shrink-0" />
+                    <Icon
+                      className="w-3.5 h-3.5 sm:w-4 sm:h-4 shrink-0"
+                      aria-hidden="true"
+                    />
                   )}
                 </Link>
               </motion.div>

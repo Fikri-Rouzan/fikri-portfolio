@@ -20,8 +20,11 @@ export function NavbarContent() {
 
   return (
     <LayoutGroup id="navbar-pill-group">
-      <nav className="fixed bottom-5 left-1/2 -translate-x-1/2 z-50">
-        <div className="flex items-center gap-1.5 sm:gap-2 p-1.5 sm:p-2 rounded-full border-2 border-border bg-secondary-background/60 backdrop-blur-none shadow-shadow">
+      <nav
+        aria-label="Main"
+        className="fixed bottom-[max(1rem,env(safe-area-inset-bottom))] sm:bottom-[max(1.25rem,env(safe-area-inset-bottom))] left-1/2 -translate-x-1/2 z-50 max-w-[calc(100vw-1rem)]"
+      >
+        <div className="flex items-center gap-1 sm:gap-1.5 p-1 sm:p-1.5 rounded-full border-2 border-border bg-secondary-background shadow-shadow">
           {NAV_ITEMS.map((item) => {
             const Icon = item.icon;
             const isActive = pathname === item.href;
@@ -31,14 +34,15 @@ export function NavbarContent() {
                 <Link
                   href={item.href}
                   aria-label={item.label}
+                  aria-current={isActive ? "page" : undefined}
                   className={`relative z-10 flex items-center justify-center rounded-full font-mono text-xs sm:text-sm font-bold transition-transform duration-150 ${
                     isActive
                       ? item.isSpecial
-                        ? "text-background px-4 sm:px-5 py-2 sm:py-2.5 gap-2"
-                        : "text-white px-4 sm:px-5 py-2 sm:py-2.5 gap-2"
+                        ? "text-background px-3.5 sm:px-4 h-9 sm:h-10 gap-2"
+                        : "text-white px-3.5 sm:px-4 h-9 sm:h-10 gap-2"
                       : item.isSpecial
-                        ? "bg-foreground text-background w-10 h-10 sm:w-11 sm:h-11 hover:scale-105 border-2 border-border shadow-shadow-sm"
-                        : "text-foreground w-10 h-10 sm:w-11 sm:h-11 hover:bg-background/80"
+                        ? "bg-foreground text-background size-9 sm:size-10 hover:scale-105 border-2 border-border shadow-shadow-sm"
+                        : "text-foreground size-9 sm:size-10 hover:bg-background"
                   }`}
                 >
                   {/* Active navigation pill */}
@@ -53,7 +57,7 @@ export function NavbarContent() {
                     />
                   )}
 
-                  <Icon className="w-4 h-4 shrink-0" />
+                  <Icon className="w-4 h-4 shrink-0" aria-hidden="true" />
 
                   {isActive && (
                     <span className="tracking-wide ml-0.5">{item.label}</span>
@@ -62,7 +66,10 @@ export function NavbarContent() {
 
                 {/* Tooltip */}
                 {!isActive && (
-                  <span className="absolute -top-11 left-1/2 -translate-x-1/2 px-2.5 py-1 bg-neutral-900 text-white text-[11px] font-mono rounded border border-border opacity-0 pointer-events-none group-hover:opacity-100 transition-opacity whitespace-nowrap shadow-shadow-sm">
+                  <span
+                    aria-hidden="true"
+                    className="hidden sm:block absolute -top-11 left-1/2 -translate-x-1/2 px-2.5 py-1 bg-neutral-900 text-white text-xs font-mono rounded border border-border opacity-0 pointer-events-none group-hover:opacity-100 group-focus-within:opacity-100 transition-opacity whitespace-nowrap shadow-shadow-sm"
+                  >
                     {item.label}
                   </span>
                 )}

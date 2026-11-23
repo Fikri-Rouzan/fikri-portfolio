@@ -35,9 +35,11 @@ export function TypingRoles() {
   }, [text, isDeleting, roleIndex]);
 
   return (
-    <div className="font-mono text-base sm:text-xl font-bold text-main flex items-center gap-1.5 min-h-8">
-      <span>{text}</span>
+    <div className="font-mono text-base sm:text-lg md:text-xl font-bold text-main flex items-center gap-1.5 min-h-8">
+      <span className="sr-only">{ROLES.join(" & ")}</span>
+      <span aria-hidden="true">{text}</span>
       <motion.span
+        aria-hidden="true"
         animate={{
           opacity: [1, 0, 1],
           scaleY: [1, 1.25, 1],
@@ -47,7 +49,7 @@ export function TypingRoles() {
           repeat: Infinity,
           ease: "easeInOut",
         }}
-        className="w-0.5 sm:w-1 h-4 sm:h-5 bg-main inline-block origin-center"
+        className="w-0.5 sm:w-1 h-4 sm:h-5 md:h-6 bg-main inline-block origin-center"
       />
     </div>
   );
