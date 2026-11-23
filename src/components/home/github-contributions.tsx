@@ -62,7 +62,7 @@ export function GithubContributions() {
         {/* Contribution graph */}
         <div className="w-full overflow-x-auto pt-2 pb-1 scrollbar-none flex justify-center">
           <Image
-            src={`https://ghchart.rshah.org/4070f4/${username}`}
+            src={`https://ghchart.rshah.org/1e66f5/${username}`}
             alt={`${username}'s GitHub Contributions`}
             width={650}
             height={110}

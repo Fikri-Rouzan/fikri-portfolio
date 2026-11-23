@@ -33,7 +33,7 @@ export function ClickParticles() {
     window.addEventListener("resize", handleResize);
 
     // Colors for the particles
-    const colors = ["#5294ff", "#ff4d50", "#facc00", "#05e17a", "#7a83ff"];
+    const colors = ["#8aadf4", "#ed8796", "#eed49f", "#a6da95", "#c6a0f6"];
 
     const handleClick = (e: MouseEvent) => {
       const count = 12;

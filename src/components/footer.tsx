@@ -1,5 +1,6 @@
 "use client";
 
+import { startTransition, useEffect, useState } from "react";
 import Link from "next/link";
 import { motion } from "motion/react";
 import { SOCIAL_CONTACTS } from "@/data/socials";
@@ -7,14 +8,21 @@ import { SOCIAL_CONTACTS } from "@/data/socials";
 const MotionLink = motion.create(Link);
 
 export function Footer() {
-  const currentYear = new Date().getFullYear();
+  const [currentYear, setCurrentYear] = useState<number | null>(null);
+
+  useEffect(() => {
+    startTransition(() => {
+      setCurrentYear(new Date().getFullYear());
+    });
+  }, []);
 
   return (
     <footer className="w-full border-t-2 border-border bg-secondary-background mt-auto pt-7 sm:pt-9 pb-28 sm:pb-32">
       <div className="w-full px-4 sm:px-8 md:px-12 flex flex-col md:grid md:grid-cols-3 items-center gap-6">
         {/* Copyright */}
         <div className="text-xs sm:text-sm font-mono text-foreground text-center md:text-left md:justify-self-start order-1">
-          © {currentYear} Muhammad Fikri Rouzan Ash Shidik
+          © {currentYear ? `${currentYear} ` : ""}Muhammad Fikri Rouzan Ash
+          Shidik
         </div>
 
         {/* Social contacts */}

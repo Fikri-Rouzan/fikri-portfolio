@@ -81,8 +81,8 @@ function FormFields() {
         <div
           className={`p-3.5 rounded-base border-2 border-border font-mono text-xs sm:text-sm flex items-center gap-2.5 shadow-shadow-sm ${
             status.type === "success"
-              ? "bg-[#05e17a] text-black"
-              : "bg-[#ff4d50] text-white"
+              ? "bg-[#a6e3a1] text-black"
+              : "bg-[#e78284] text-white"
           }`}
         >
           {status.type === "success" ? (
