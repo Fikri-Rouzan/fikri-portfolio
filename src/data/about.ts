@@ -99,6 +99,16 @@ export interface CertificationItem {
   skills: string[];
 }
 
+export interface PublicationItem {
+  id: number;
+  title: string;
+  publisher: string;
+  dateAdded: string;
+  abstract: string;
+  skills: string[];
+  doi: string;
+}
+
 export interface TechCategory {
   category: string;
   icon?: ElementType;
@@ -177,6 +187,28 @@ export const CERTIFICATION_DATA: CertificationItem[] = [
     issueDate: "Issued Apr 2025 · Expires Apr 2027",
     slug: "alibaba-cloud-certified-associate-system-operator",
     skills: ["Linux", "Cloud Computing", "System Operations", "Infrastructure"],
+  },
+];
+
+export const PUBLICATION_DATA: PublicationItem[] = [
+  {
+    id: 1,
+    title:
+      "Rice Quality Classification Based on Digital Images Using MobileNetV2: A Comparative Evaluation for Low-Cost Deployment",
+    publisher: "IEEE",
+    dateAdded: "17 November 2026",
+    abstract:
+      "Manual visual inspection of milled rice is subjective and inefficient. This study investigates a practical smartphone-based inspection pipeline for four physical quality classes: Whole, Broken, Chalky, and Discolored. A balanced primary dataset of 1,000 single-kernel images was acquired in a low-cost mini lightbox and processed using Gaussian filtering, HSV/Otsu segmentation, convex-hull masking, square padding, and normalization. To examine both predictive performance and deployment feasibility, MobileNetV2, ResNet50, and EfficientNetB0 were trained under the same two-phase ImageNet transfer-learning protocol and assessed using stratified five-fold cross-validation. MobileNetV2 achieved 90.0% mean accuracy (SD 2.9%), compared with 93.7% (SD 2.2%) for ResNet50 and 92.8% (SD 2.7%) for EfficientNetB0; the differences were not statistically significant (Friedman p = 0.2415). MobileNetV2 required only 2.59 M parameters, a 10.45 MB model file, and 168.78 ms/image inference latency, substantially lower than ResNet50. The model was integrated into a Streamlit prototype, Ricelytics, for multi-kernel analysis. The contribution is therefore an evidence-based efficiency-oriented baseline for low-cost rice-quality inspection, rather than a claim of superior accuracy.",
+    skills: [
+      "Deep Learning",
+      "Computer Vision",
+      "Python",
+      "Jupyter Notebook",
+      "TensorFlow",
+      "Streamlit",
+      "OpenCV",
+    ],
+    doi: "10.1109/CITSM71915.2026.11769290",
   },
 ];
 
