@@ -1,7 +1,8 @@
 import { ElementType } from "react";
 import { ContactFormData } from "@/lib/schemas/contact";
 import { FaEnvelope, FaMapPin } from "react-icons/fa6";
-import { Linkedin, Github } from "@thesvg/react";
+import { Github, GoogleScholar } from "@thesvg/react";
+import { LinkedinMono } from "@/components/icons/linkedin-mono";
 
 export interface FormFieldConfig {
   name: keyof ContactFormData;
@@ -70,7 +71,7 @@ export const CONTACTS: ContactItem[] = [
     label: "LinkedIn",
     value: "fikrirouzan",
     href: "https://www.linkedin.com/in/fikrirouzan",
-    icon: Linkedin,
+    icon: LinkedinMono,
     isExternal: true,
   },
   {
@@ -78,6 +79,14 @@ export const CONTACTS: ContactItem[] = [
     value: "Fikri-Rouzan",
     href: "https://github.com/Fikri-Rouzan",
     icon: Github,
+    variant: "mono",
+    isExternal: true,
+  },
+  {
+    label: "Google Scholar",
+    value: "OmyVfqoAAAAJ",
+    href: "https://scholar.google.com/citations?user=OmyVfqoAAAAJ",
+    icon: GoogleScholar,
     variant: "mono",
     isExternal: true,
   },

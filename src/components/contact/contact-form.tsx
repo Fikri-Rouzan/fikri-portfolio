@@ -126,7 +126,7 @@ function FormFields() {
                   aria-describedby={
                     fieldError ? `contact-${field.name}-error` : undefined
                   }
-                  className="w-full px-3.5 py-2.5 rounded-base border-2 border-border bg-background text-foreground text-base sm:text-sm font-sans placeholder:text-foreground/40 focus-visible:shadow-shadow-sm transition-shadow resize-none disabled:opacity-60"
+                  className="w-full px-3.5 py-2.5 rounded-base border-2 border-border bg-background text-foreground text-base sm:text-sm font-sans placeholder:text-foreground/40 focus-visible:shadow-shadow-sm focus:outline-none transition-shadow resize-none disabled:opacity-60"
                 />
               ) : (
                 <input
@@ -141,7 +141,7 @@ function FormFields() {
                   aria-describedby={
                     fieldError ? `contact-${field.name}-error` : undefined
                   }
-                  className="w-full px-3.5 py-3 sm:py-2.5 rounded-base border-2 border-border bg-background text-foreground text-base sm:text-sm font-sans placeholder:text-foreground/40 focus-visible:shadow-shadow-sm transition-shadow disabled:opacity-60"
+                  className="w-full px-3.5 py-3 sm:py-2.5 rounded-base border-2 border-border bg-background text-foreground text-base sm:text-sm font-sans placeholder:text-foreground/40 focus-visible:shadow-shadow-sm focus:outline-none transition-shadow disabled:opacity-60"
                 />
               )}
 

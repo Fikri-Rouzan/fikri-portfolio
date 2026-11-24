@@ -68,7 +68,7 @@ export function NavbarContent() {
                 {!isActive && (
                   <span
                     aria-hidden="true"
-                    className="hidden sm:block absolute -top-11 left-1/2 -translate-x-1/2 px-2.5 py-1 bg-neutral-900 text-white text-xs font-mono rounded border border-border opacity-0 pointer-events-none group-hover:opacity-100 group-focus-within:opacity-100 transition-opacity whitespace-nowrap shadow-shadow-sm"
+                    className="hidden sm:block absolute -top-11 left-1/2 -translate-x-1/2 px-2.5 py-1 bg-neutral-900 text-white text-xs font-mono rounded border border-border opacity-0 pointer-events-none group-hover:opacity-100 group-has-focus-visible:opacity-100 transition-opacity whitespace-nowrap shadow-shadow-sm"
                   >
                     {item.label}
                   </span>

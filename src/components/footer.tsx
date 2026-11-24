@@ -57,7 +57,7 @@ export function Footer() {
                 {/* Tooltip */}
                 <span
                   aria-hidden="true"
-                  className="hidden sm:block absolute -top-8 left-1/2 -translate-x-1/2 px-2 py-0.5 bg-neutral-900 text-white text-[11px] font-mono rounded border border-border opacity-0 pointer-events-none group-hover:opacity-100 group-focus-within:opacity-100 transition-opacity z-10 shadow-shadow-sm whitespace-nowrap"
+                  className="hidden sm:block absolute -top-8 left-1/2 -translate-x-1/2 px-2 py-0.5 bg-neutral-900 text-white text-[11px] font-mono rounded border border-border opacity-0 pointer-events-none group-hover:opacity-100 group-has-focus-visible:opacity-100 transition-opacity z-10 shadow-shadow-sm whitespace-nowrap"
                 >
                   {item.name}
                 </span>

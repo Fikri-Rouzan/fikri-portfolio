@@ -11,7 +11,6 @@ import {
   Workflow,
 } from "lucide-react";
 import {
-  Linkedin,
   Github,
   Html5,
   CssNew,
@@ -68,6 +67,7 @@ import {
   Vercel,
   Netlify,
 } from "@thesvg/react";
+import { LinkedinMono } from "@/components/icons/linkedin-mono";
 
 export interface AboutStat {
   label: string;
@@ -148,7 +148,7 @@ export const ABOUT_ACTIONS: AboutActionLink[] = [
   {
     label: "LinkedIn",
     href: "https://www.linkedin.com/in/fikrirouzan",
-    icon: Linkedin,
+    icon: LinkedinMono,
     isExternal: true,
   },
   {
