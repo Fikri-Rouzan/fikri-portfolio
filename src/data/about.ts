@@ -64,6 +64,7 @@ import {
   Aws,
   HuggingFace,
   Railway,
+  Cloudflare,
   Vercel,
   Netlify,
 } from "@thesvg/react";
@@ -298,12 +299,13 @@ export const TECH_CATEGORIES: TechCategory[] = [
     ],
   },
   {
-    category: "Cloud & Deployment",
+    category: "Cloud & Hosting",
     icon: Cloudy,
     skills: [
       { name: "AWS", icon: Aws },
       { name: "Hugging Face", icon: HuggingFace },
       { name: "Railway", icon: Railway, variant: "mono" },
+      { name: "Cloudflare", icon: Cloudflare },
       { name: "Vercel", icon: Vercel, variant: "mono" },
       { name: "Netlify", icon: Netlify },
     ],
